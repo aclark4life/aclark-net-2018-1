@@ -142,3 +142,25 @@ DATABASES = {
             os.environ.get('DB_HOST', 'localhost'), os.environ.get(
                 'DB_PORT', '5432'), os.environ.get('DB_NAME', 'project_app'))))
 }
+
+# aclarknet
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Send mail with AWS SES
+EMAIL_BACKEND = 'django_ses.SESBackend'
+EMAIL_FROM = 'aclark@aclark.net'
+EMAIL_SUBJECT = 'ACLARK.NET, LLC Website — Contact Form Submission %s'
+
+# Recaptcha
+NOCAPTCHA = True
+RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY', '')
+RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_PRIVATE_KEY', '')
+
+# Errors sent to admins
+ADMINS = [
+    ('Alex', 'aclark@aclark.net'),
+]
+DEFAULT_FROM_EMAIL = 'aclark@aclark.net'
+SERVER_EMAIL = 'aclark@aclark.net'
+
