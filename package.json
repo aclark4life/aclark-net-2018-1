@@ -1,0 +1,23 @@
+{
+  "name": "aclarknet",
+  "version": "1.0.0",
+  "description": "aclarknet-www ================================================================================",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aclarknet/aclarknet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aclarknet/aclarknet/issues"
+  },
+  "homepage": "https://github.com/aclarknet/aclarknet#readme"
+}
