@@ -163,4 +163,3 @@ ADMINS = [
 ]
 DEFAULT_FROM_EMAIL = 'aclark@aclark.net'
 SERVER_EMAIL = 'aclark@aclark.net'
-
