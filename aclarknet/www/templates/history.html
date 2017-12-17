@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+            <div class="row">
+              <div class="col-md-12">
+                <h1>History</h1>
+                <h2>A timeline of significant events.</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <p class="lead"><i class="fa fa-clock-o fa-5x px-5 float-left"></i> In 2004, Alex Clark began doing business as ACLARK.NET; a Maryland, USA registered trade name. His first client was a company with a Plone website in London, England.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <p class="lead"><i class="fa fa-clock-o fa-5x px-5 float-left"></i> In 2007, Amy Clark created ACLARK.NET, LLC; a Maryland, USA limited liability corporation. Our <a href="{% url 'clients' %}">client list</a> began to grow.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <p class="lead"><i class="fa fa-clock-o fa-5x px-5 float-left"></i> In 2008, Amy Clark created ZPUGDC, Inc; a non-profit 501(c)(3) corporation in Maryland, USA. With this organization we hosted <a href="{% url 'community' %}">Plone Conference 2008</a>.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <p class="lead"><i class="fa fa-clock-o fa-5x px-5 float-left"></i> In 2014, we reached a milestone 10 years in business.</p>
+              </div>
+            </div>
+{% endblock %}

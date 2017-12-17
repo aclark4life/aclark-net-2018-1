@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Book</h1>
+                <h2>Plone 3.3 Site Administration.</h2>
+              </div>
+            </div>
+            <div>
+              <div class="row">
+                <div class="col-md-6" style="text-align: center">
+                  <img class="img-thumbnail" src="{% static 'book.png' %}">
+                </div>
+                <div class="col-md-6">
+                  <p class="lead">Written by <a href="{% url 'team' %}#aclark">Alex Clark</a> and based on Plone 3.3, this book will help you learn how to create, deploy and maintain all versions of Plone. The approach presented within this book was continued through Plone 5 as part of the <a href="{% url 'open-source'  %}#plock">Plock project</a>.</p>
+                  <p class="lead">
+                    <i class="fa fa-book fa-5x" style="vertical-align: middle"></i>
+                    <a href="https://www.packtpub.com/web-development/plone-33-site-administration" target="_blank">Buy a copy today</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+{% endblock %}

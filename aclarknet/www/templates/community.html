@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Community Service</h1>
+                <h2>Our efforts to support the Python community.</h2>
+              </div>
+            </div>
+            <div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p class="lead">In early 2008, we created a 501(c)(3) non-profit organization, <a href="http://dcpython.org" target="_blank">DC Python</a> in Maryland, USA to expand our outreach and service to the Python community in DC.</p>
+                </div>
+                <div class="col-md-8">
+                  <img class="img-thumbnail" src="{% static 'dcpython.png' %}">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <img class="img-thumbnail" src="{% static 'ploneconf.png' %}">
+                </div>
+                <div class="col-md-6">
+                  <p class="lead">In late 2008, we made one of our most significant contributions to the community by organizing and hosting <a href="http://old.plone.org/2008" target="_blank">Plone Conference 2008</a> in DC.</p>
+                </div>
+              </div>
+            </div>
+{% endblock %}

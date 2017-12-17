@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Location</h1>
+                <h2>Bethesda, Maryland, USA.</h2>
+              </div>
+            </div>
+            <div>
+              <div class="row">
+                <div class="col-md-12" style="text-align: center">
+                  <img class="img-thumbnail" width="100%" src="{% static 'bethesda-fountain.jpg' %}">
+                  <p>Photo by <a href="https://flic.kr/p/72skT5">Edward Johnson</a></p>
+                  <p class="lead">We are located in Bethesda, Maryland, USA, a suburb of Washington, DC, USA. We service a global community of individuals and organizations and are always eager and <a href="{% url 'contact' %}">available to help</a>.</p>
+                </div>
+              </div>
+            </div>
+{% endblock %}

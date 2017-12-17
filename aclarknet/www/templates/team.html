@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Team</h1>
+                <h2>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications.</h2>
+              </div>
+            </div>
+            <div>
+              {% for profile in profiles %}
+              <hr class="featurette-divider" id="{{profile.get_username }}">
+              <div class="row">
+                <div class="col-md-12">
+                  <img class="img-thumbnail pull-left" src="{{ profile.get_avatar_url }}" style="margin: 0 1em 1em 0">
+                  <h2>{{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
+                  <p class="lead">{{ profile.bio|safe|default:'' }}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+{% endblock %}

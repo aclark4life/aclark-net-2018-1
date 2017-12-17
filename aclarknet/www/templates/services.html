@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Services</h1>
+                <h2>We offer a variety of professional technical services including software development, systems administration and more.</h2>
+              </div>
+            </div>
+            <div>
+              {% for service in services %}
+              <div class="row">
+                  <div class="col-md-12">
+                      <h2 id="{{ service.name|lower }}">{{ service.name }}</h2>
+                      <p class="lead"><i class="fa fa-{{ service.icon }} fa-5x pull-left"></i>{{ service.description|safe|linebreaks }}</p>
+                  </div>
+              </div>
+              {% if not forloop.last %}<hr class="featurette-divider">{% endif %}
+              {% endfor %}
+            </div>
+{% endblock %}

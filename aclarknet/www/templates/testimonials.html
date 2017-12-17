@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Testimonials</h1>
+                <h2>Feedback from our clients.</h2>
+              </div>
+            </div>
+            <div> 
+              {% for testimonial in testimonials %}
+              <hr class="featurette-divider" id="{{ testimonial.slug }}">
+              <div class="row testimonial">
+                <div class="col-md-12">
+                  <h3><i class="fa fa-calendar"></i> {{ testimonial.issue_date }}</h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="lead"><i class="fa fa-quote-left"></i> <strong>{{ testimonial.description }} </strong> <i class="fa fa-quote-right"></i></p>
+                </div>
+                <div class="col-md-6 offset-md-6">
+                  <h3>&mdash;{{ testimonial.name }}, {{ testimonial.title }}</h3>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+{% endblock %}

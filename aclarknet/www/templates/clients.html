@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Clients</h1>
+                <h2>A partial list of our valued clients. <a href="{% url 'contact' %}">Join them</a> today.</h2>
+              </div>
+            </div>
+            <div>
+              {% for client in clients %}
+              <div class="row">
+                <div class="col-md-12">
+                  <i class="fa fa-{% if client.icon %}{{ client.icon }}{% else %}building{% endif %} fa-5x pull-left"></i>
+                  <h3>{{ client.name }}</h3>
+                  <p class="lead">{{ client.description|striptags }}</p>
+                </div>
+              </div>
+              {% if not forloop.last %}<hr class="featurette-divider">{% endif %}
+              {% endfor %}
+            </div>
+{% endblock %}

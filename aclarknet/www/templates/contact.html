@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Contact</h1>
+                <h2>Please contact us to schedule a time to discuss your needs. We look forward to working with you.</h2>
+              </div>
+            </div>
+            <div>
+              <form action="" method="post">{% csrf_token %}
+              {{ form|crispy }}
+              <button class="btn btn-lg btn-success" type="submit">Send Message</button>
+              </form>
+            </div>
+{% endblock %}
