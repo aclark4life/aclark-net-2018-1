@@ -36,6 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aclarknet.www',
+    'captcha',
+    'crispy_forms',
+    'django_ses',
 ]
 
 MIDDLEWARE = [
