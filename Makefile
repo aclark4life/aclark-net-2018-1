@@ -387,3 +387,8 @@ webpack-init:
 webpack:
 	webpack
 pack: webpack  # Alias
+
+# aclarknet-{db,www}
+
+PROJECT=aclarknet
+APP=www
