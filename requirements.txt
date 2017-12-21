@@ -1,4 +1,4 @@
--e git+git@github.com:alex/django-taggit.git#egg=django_taggit
+-e git+git@github.com:alex/django-taggit.git@95776ac66948ed7ba7c12e35c1170551e3be66a5#egg=django_taggit
 Babel==2.5.1
 Django==2.0
 Faker==0.8.8
