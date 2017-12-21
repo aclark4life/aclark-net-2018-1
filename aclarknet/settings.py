@@ -35,10 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'aclarknet.db',
     'aclarknet.www',
     'captcha',
     'crispy_forms',
     'django_ses',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -81,6 +83,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -163,3 +166,11 @@ ADMINS = [
 ]
 DEFAULT_FROM_EMAIL = 'aclark@aclark.net'
 SERVER_EMAIL = 'aclark@aclark.net'
+
+# aclarknet
+
+GEOIP_PATH = BASE_DIR
+
+# https://stackoverflow.com/a/21317596
+DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+
