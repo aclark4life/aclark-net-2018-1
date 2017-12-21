@@ -1,4 +1,4 @@
-./vendor/django-taggit-master.zip
+-e git+git@github.com:alex/django-taggit.git#egg=taggit
 Babel==2.5.1
 Django==2.0
 Faker==0.8.8
