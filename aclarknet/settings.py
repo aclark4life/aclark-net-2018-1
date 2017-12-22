@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'aclarknet.db',
+    # 'aclarknet.db',
     'aclarknet.www',
     'captcha',
     'crispy_forms',
