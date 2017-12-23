@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_ses',
     'taggit',
     'import_export',
+    'django_xhtml2pdf',
 ]
 
 MIDDLEWARE = [
