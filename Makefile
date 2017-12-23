@@ -392,3 +392,13 @@ pack: webpack  # Alias
 
 PROJECT=aclarknet
 APP=www
+
+aclarknet-db-import:
+	sed -i '' 's/database/db/g' time.json
+	sed -i '' 's/database/db/g' project.json
+	sed -i '' 's/database/db/g' client.json
+	sed -i '' 's/database/db/g' note.json
+	scp -i /Users/alexclark/.ssh/AC.pem time.json ec2-user@54.147.23.87:
+	scp -i /Users/alexclark/.ssh/AC.pem project.json ec2-user@54.147.23.87:
+	scp -i /Users/alexclark/.ssh/AC.pem client.json ec2-user@54.147.23.87:
+	scp -i /Users/alexclark/.ssh/AC.pem note.json ec2-user@54.147.23.87:
