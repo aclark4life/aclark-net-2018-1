@@ -16,6 +16,7 @@ Including another URLconf
 from aclarknet.db import views as db_views
 from aclarknet.www import views as www_views
 from django.conf.urls import url
+from django.conf.urls import include
 from django.contrib import admin
 from rest_framework import routers
 
