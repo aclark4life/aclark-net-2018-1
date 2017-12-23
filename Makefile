@@ -394,11 +394,19 @@ PROJECT=aclarknet
 APP=www
 
 aclarknet-db-import:
+	scp db:/srv/aclarknet-database/task.json .
+	scp db:/srv/aclarknet-database/time.json .
+	scp db:/srv/aclarknet-database/project.json .
+	scp db:/srv/aclarknet-database/client.json .
+	scp db:/srv/aclarknet-database/contact.json .
+	scp db:/srv/aclarknet-database/note.json .
+	sed -i '' 's/database/db/g' task.json
 	sed -i '' 's/database/db/g' time.json
 	sed -i '' 's/database/db/g' project.json
 	sed -i '' 's/database/db/g' client.json
 	sed -i '' 's/database/db/g' contact.json
 	sed -i '' 's/database/db/g' note.json
+	scp -i /Users/alexclark/.ssh/AC.pem task.json ec2-user@54.147.23.87:
 	scp -i /Users/alexclark/.ssh/AC.pem time.json ec2-user@54.147.23.87:
 	scp -i /Users/alexclark/.ssh/AC.pem project.json ec2-user@54.147.23.87:
 	scp -i /Users/alexclark/.ssh/AC.pem client.json ec2-user@54.147.23.87:
