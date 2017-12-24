@@ -86,7 +86,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
@@ -175,4 +174,3 @@ GEOIP_PATH = BASE_DIR
 
 # https://stackoverflow.com/a/21317596
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
-
