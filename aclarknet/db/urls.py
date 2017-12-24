@@ -1,9 +1,8 @@
 from django.conf.urls import url
 from . import views
 
-
 urlpatterns = [
-#    url(r'^$', views.home, name='home'),
+    #    url(r'^$', views.home, name='home'),
     # Client
     url(r'^client/(?P<pk>\d+)$', views.client_view, name='client_view'),
     url(r'^client/(?P<pk>\d+)/edit$', views.client_edit, name='client_edit'),
@@ -22,8 +21,8 @@ urlpatterns = [
         name='contract_edit'),
     url(r'^contract/add$', views.contract_edit, name='contract_edit'),
     url(r'^contract$', views.contract_index, name='contract_index'),
-#    # Error (forced)
-#    url(r'^error$', views.error, name='error'),
+    #    # Error (forced)
+    #    url(r'^error$', views.error, name='error'),
     # Estimate
     url(r'^estimate/(?P<pk>\d+)$', views.estimate_view, name='estimate_view'),
     url(r'^estimate/(?P<pk>\d+)/edit$',
@@ -37,8 +36,8 @@ urlpatterns = [
         name='invoice_edit'),
     url(r'^invoice/add$', views.invoice_edit, name='invoice_edit'),
     url(r'^invoice$', views.invoice_index, name='invoice_index'),
-#    # Login
-#    url(r'^login$', views.login, name='login'),
+    #    # Login
+    #    url(r'^login$', views.login, name='login'),
     # Files
     url(r'^file/(?P<pk>\d+)$', views.file_view, name='file_view'),
     url(r'^file/(?P<pk>\d+)/edit$', views.file_edit, name='file_edit'),
@@ -60,8 +59,8 @@ urlpatterns = [
     url(r'^note/(?P<pk>\d+)/edit$', views.note_edit, name='note_edit'),
     url(r'^note/add$', views.note_edit, name='note_edit'),
     url(r'^note$', views.note_index, name='note_index'),
-#    # Plot
-#    url(r'^plot$', views.plot, name='plot'),
+    #    # Plot
+    #    url(r'^plot$', views.plot, name='plot'),
     # Project
     url(r'^project/(?P<pk>\d+)$', views.project_view, name='project_view'),
     url(r'^project/(?P<pk>\d+)/edit$', views.project_edit,
@@ -80,9 +79,9 @@ urlpatterns = [
     url(r'^report$', views.report_index, name='report_index'),
     url(r'^report/add$', views.report_edit, name='report_edit'),
     url(r'^report/(?P<pk>\d+)/edit$', views.report_edit, name='report_edit'),
-#    # Services
-#    url(r'^service/(?P<pk>\d+)/edit$', views.service_edit,
-#        name='service_edit'),
+    #    # Services
+    #    url(r'^service/(?P<pk>\d+)/edit$', views.service_edit,
+    #        name='service_edit'),
     # Settings
     url(r'^settings/app/edit$',
         views.settings_app_edit,
@@ -99,9 +98,9 @@ urlpatterns = [
     url(r'^settings/contract$',
         views.settings_contract,
         name='settings_contract'),
-#    # Social
-#    url('', include('django.contrib.auth.urls', namespace='auth')),
-#    url('', include('social_django.urls', namespace='social')),
+    #    # Social
+    #    url('', include('django.contrib.auth.urls', namespace='auth')),
+    #    url('', include('social_django.urls', namespace='social')),
     # Task
     url(r'^task/(?P<pk>\d+)$', views.task_view, name='task_view'),
     url(r'^task/(?P<pk>\d+)/edit$', views.task_edit, name='task_edit'),

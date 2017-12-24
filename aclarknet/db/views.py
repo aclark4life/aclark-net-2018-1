@@ -334,7 +334,12 @@ def invoice_view(request, pk=None):
         time_model=Time)
     if context['pdf']:
         company_name = get_company_name(SettingsCompany)
-        return render_pdf(request, 'invoice_pdf.html', context, pk=pk, company_name=company_name)
+        return render_pdf(
+            request,
+            'invoice_pdf.html',
+            context,
+            pk=pk,
+            company_name=company_name)
     else:
         return render(request, 'invoice_view.html', context)
 

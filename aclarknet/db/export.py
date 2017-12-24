@@ -4,7 +4,7 @@ from io import BytesIO
 from .doc import generate_doc
 
 
-def render_pdf(request, template, context, pk=None, company_name=None): 
+def render_pdf(request, template, context, pk=None, company_name=None):
     filename = 'export.pdf'
     if company_name and pk:
         filename = '%s_%s_%s.pdf' % (company_name, 'invoice'.upper(), pk)

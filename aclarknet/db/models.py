@@ -146,9 +146,11 @@ class Contract(BaseModel):
     """
     title = models.CharField(max_length=300, blank=True, null=True)
     client = models.ForeignKey(
-        'Client', blank=True, null=True, limit_choices_to={
-            'active': True
-        }, on_delete=models.CASCADE)
+        'Client',
+        blank=True,
+        null=True,
+        limit_choices_to={'active': True},
+        on_delete=models.CASCADE)
     project = models.ForeignKey(
         "Project",
         blank=True,
@@ -165,11 +167,12 @@ class Contract(BaseModel):
             'accepted_date': None
         })
     task = models.ForeignKey(
-        'Task', blank=True, null=True, limit_choices_to={
-            'active': True
-        },
+        'Task',
+        blank=True,
+        null=True,
+        limit_choices_to={'active': True},
         on_delete=models.CASCADE,
-)
+    )
     body = models.TextField(blank=True, null=True)
 
     def __str__(self):
@@ -533,9 +536,10 @@ class Proposal(BaseModel):
     """
     """
     client = models.ForeignKey(
-        'Client', blank=True, null=True, limit_choices_to={
-            'active': True
-        },
+        'Client',
+        blank=True,
+        null=True,
+        limit_choices_to={'active': True},
         on_delete=models.CASCADE)
     project = models.ForeignKey(
         "Project",
@@ -553,11 +557,12 @@ class Proposal(BaseModel):
             'accepted_date': None
         })
     task = models.ForeignKey(
-        'Task', blank=True, null=True, limit_choices_to={
-            'active': True
-        },
+        'Task',
+        blank=True,
+        null=True,
+        limit_choices_to={'active': True},
         on_delete=models.CASCADE,
-)
+    )
     title = models.CharField(max_length=300, blank=True, null=True)
     body = models.TextField(blank=True, null=True)
 
