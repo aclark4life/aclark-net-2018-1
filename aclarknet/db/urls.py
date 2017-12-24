@@ -2,7 +2,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    #    url(r'^$', views.home, name='home'),
+    url(r'^$', views.home, name='db'),
     # Client
     url(r'^client/(?P<pk>\d+)$', views.client_view, name='client_view'),
     url(r'^client/(?P<pk>\d+)/edit$', views.client_edit, name='client_edit'),

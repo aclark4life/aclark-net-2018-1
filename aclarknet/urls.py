@@ -32,7 +32,7 @@ urlpatterns = [
     url(r'^about$', www_views.about, name='about'),
     url(r'^admin', admin.site.urls),
     url(r'^api/', include(router.urls)),
-    # url(r'^auth/', include('django.contrib.auth.urls'), name='auth'),
+    # url(r'^auth/', include('django.contrib.auth.urls')),
     url(r'^db/', include(db_urls)),
     url(r'^blog$', www_views.blog, name='blog'),
     url(r'^book$', www_views.book, name='book'),
