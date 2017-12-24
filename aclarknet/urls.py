@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from aclarknet.db import urls as db_urls
 from aclarknet.db import views as db_views
 from aclarknet.www import views as www_views
 from django.conf.urls import url
@@ -31,6 +32,8 @@ urlpatterns = [
     url(r'^about$', www_views.about, name='about'),
     url(r'^admin', admin.site.urls),
     url(r'^api/', include(router.urls)),
+    # url(r'^auth/', include('django.contrib.auth.urls'), name='auth'),
+    url(r'^db/', include(db_urls)),
     url(r'^blog$', www_views.blog, name='blog'),
     url(r'^book$', www_views.book, name='book'),
     url(r'^clients$', www_views.clients, name='clients'),
