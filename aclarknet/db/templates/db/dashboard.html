@@ -1,0 +1,11 @@
+          {% if dashboard_items %}
+            {% for dashboard in dashboard_items %}  <!-- https://stackoverflow.com/a/4524851/185820 -->
+              {% if dashboard in dashboard_choices %}
+                {% with "dashboard_"|add:dashboard|add:".html" as dashboard_html %}
+{% include dashboard_html %}
+                {% endwith %}
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <div class="alert alert-warning col-md-3 mx-auto">No dashboard items configured.</div>
+          {% endif %}

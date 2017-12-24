@@ -1,0 +1,85 @@
+              <style>
+                  h1 {
+                    font-size: 200%;
+                  }
+                  .logo h1 {
+                    font-size: 400%;
+                    font-weight: normal;
+                    margin: 0;
+                    padding: 0;
+                    color: orange;
+                  }
+                  td, th {
+                    padding: 0.25em;
+                  }
+              </style>
+              {% if pdf %}
+              <div class="row"><div class="col-md-12 center logo"><h1>{{ company_name }}</h1></div></div>
+              <div class="row"><div class="col-md-12 center"><h1>{{ item.name|default:'' }} Revenue Report</h1></div></div>
+              {% endif %}
+              <h2>Overview</h2>
+              <table data-toggle="table" data-classes="table table-no-bordered table-hover" {% if pdf %}border=1 {% endif %}>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Gross</th>
+                    <th>Net</th>
+                    <th>Cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><strong>{{ item.name|default:'' }}</strong></td>
+                  <td>{{ item.date }}</td>
+                  <td align="right">{{ item.gross }}</td>
+                  <td align="right">{{ item.net }}</td>
+                  <td align="right">{{ cost }}</td>
+                </tr>
+                </tbody>
+              </table>
+              {% if item.notes %}
+              <br>
+              <div class="row"> 
+                <div class="col-md-12">
+                  <h2>Notes</h2>
+                  <div class="note">{{ item.notes|linebreaks|default:'' }}</div>
+                </div>
+              </div>
+              {% endif %}
+              <br>
+              <div class="row"> 
+                <div class="col-md-12">
+                  <h2>Invoices</h2>
+                  <table data-toggle="table" data-classes="table table-no-bordered" {% if pdf %}border=1 {% endif %}>
+                    <thead>
+                      <tr>
+                        <th>Client</th>
+                        <th>Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for invoice in item.invoices.all %}
+                      <tr>
+                        <td><strong>{{ invoice.client }}</strong></td>
+                        <td align="right">{{ company_currency_symbol }}{{ invoice.amount }}</td>
+                       </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              {% if reports.gross and reports.net %}
+              <h2>Year To Date</h2>
+              <table data-toggle="table" data-classes="table table-no-bordered" {% if pdf %}border=1 {% endif %}>
+                <thead>
+                  <tr>
+                    <th>Gross</th>
+                    <th>Net</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td align="right"><strong>{{ reports.gross }}</strong></td><td align="right"><strong>{{ reports.net }}</strong></td></tr>
+                </tbody>
+              </table>
+              {% endif %}

@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class WwwConfig(AppConfig):
-    name = 'www'
+class WWWConfig(AppConfig):
+    name = 'aclarknet.www'

@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block content %}
+          <div class="row">
+            <div class="col-md-10">
+              <h1 style="border-bottom: none;"><a class="text-dark" href="{% url 'client_index' %}">Clients</a> &raquo; {% if item.url %}<a href="{{ item.url }}" target="_blank">{{ item.name|default:'Client' }}</a>{% else %}{{ item.name|default:'Client' }}{% endif %}</h1>
+            </div>
+            <div class="col-md-2 mb-3">
+              <!-- http://getbootstrap.com/docs/4.0/components/dropdowns/#split-button-dropdowns -->
+              <div class="btn-group float-right">
+                <a class="btn btn-lg btn-success" href="{% url 'client_edit' pk=item.pk %}"><i class="fa fa-edit"></i> Edit</a>
+                <button type="button" class="btn btn-block btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <!-- http://getbootstrap.com/docs/4.0/components/dropdowns/#menu-headers -->
+                  <h6 class="dropdown-header">Add</h6>
+                  <a class="dropdown-item" href="{% url 'contact_edit' %}?client={{ item.pk }}"><i class="fa fa-plus"></i> Contact</a>
+                  <a class="dropdown-item" href="{% url 'project_edit' %}?client={{ item.pk }}"><i class="fa fa-plus"></i> Project</a>
+                  <a class="dropdown-item" href="{% url 'note_edit' %}?client={{ item.pk }}"><i class="fa fa-plus"></i> Note</a>
+                  <div class="dropdown-divider"></div>
+{% include 'actions.html' %}
+                </div>
+              </div>
+            </div>
+          </div>
+{% include 'copy_form.html' %}
+{% include 'delete_form.html' %}
+          <!-------------------------------------------------------------------------------->
+          <div class="row">
+            <div class="col-md-12 my-1">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Active</th> 
+                    <th>Address</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><form action="{% url 'client_edit' item.pk %}" method="post">{% csrf_token %}<input type="hidden" value="off" name="checkbox-active"><input type="checkbox" value="on" name="checkbox-active"{% if item.active %} checked {% endif %} onChange="this.form.submit()"></form></td>
+                    <td>{{ item.address|default:'' }}</td>
+                    <td>{{ item.description|default:'' }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-------------------------------------------------------------------------------->
+          <div class="row">
+            <div class="col-md-12 my-1">
+              <h2>Projects</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 my-1">
+              <table data-toggle="table" data-classes="table table-no-bordered">
+                <thead>
+                  <tr>
+                    <th data-sortable="true">Name</th>
+                    <th data-field="start-date" data-sort-name="hidden-start-date" data-sortable="true">Start</th>
+                    <th data-field="hidden-start-date" data-sortable="true" data-visible="false">Hidden Start Date</th>
+                    <th data-field="end-date" data-sort-name="hidden-end-date" data-sortable="true">Stop</th>
+                    <th data-field="hidden-end-date" data-sortable="true" data-visible="false">Hidden End Date</th>
+                    <th>View</th>
+                    <th>Edit</th>
+                  </tr>
+                </thead>
+                <tbody> 
+                {% for project in projects %}
+                <tr>
+                  <td><a href="{% url 'project_view' project.pk %}">{{ project.name|default:'' }}</a></td>
+                  <td>{{ project.start_date|date:'Y-m-d'|default:'' }}</td>
+                  <td>{{ project.start_date|date:'U' }}</td>
+                  <td>{{ project.end_date|date:'Y-m-d'|default:'' }}</td>
+                  <td>{{ project.end_date|date:'U' }}</td>
+                  <td><a class="text-{{ icon_color }}" href="{% url 'project_view' project.pk %}"><i class="fa fa-external-link fa-{{ icon_size }}" style="vertical-align: middle"></i> View</a></td>
+                  <td><a class="text-{{ icon_color }}" href="{% url 'project_edit' project.pk %}"><i class="fa fa-edit fa-{{ icon_size }}" style="vertical-align: middle"></i> Edit</a></td>
+                </tr>
+                {% endfor %} 
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-------------------------------------------------------------------------------->
+          <div class="row">
+            <div class="col-md-12 my-1">
+              <h2>Contacts</h2>
+            </div>
+          </div>
+          <!-------------------------------------------------------------------------------->
+          <div class="row">
+            <div class="col-md-12 my-1">
+              <table data-toggle="table" data-classes="table table-no-bordered">
+                <thead>
+                  <tr>
+                    <th data-sortable="true">First Name</th>
+                    <th data-sortable="true">Last Name</th>
+                    <th>View</th>
+                    <th>Edit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for contact in contacts %}
+                  <tr>
+                    <td>{{ contact.first_name|default:'' }}</td>
+                    <td>{{ contact.last_name|default:'' }}</td>
+                    <td><a class="text-{{ icon_color }}" href="{% url 'contact_view' contact.pk %}"><i class="fa fa-external-link fa-{{ icon_size }}" style="vertical-align: middle"></i> View</a></td>
+                    <td><a class="text-{{ icon_color }}" href="{% url 'contact_edit' contact.pk %}"><i class="fa fa-edit fa-{{ icon_size }}" style="vertical-align: middle"></i> Edit</a></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 my-1">
+              <h2 class="my-1">Notes</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 my-1">
+{% include 'notes.html' %}
+            </div>
+          </div>
+{% endblock %}
