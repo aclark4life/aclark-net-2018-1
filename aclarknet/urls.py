@@ -33,7 +33,7 @@ urlpatterns = [
     url(r'^admin', admin.site.urls),
     url(r'^api/', include(router.urls)),
     # url(r'^auth/', include('django.contrib.auth.urls')),
-    url(r'^db/', include(db_urls)),
+    # url(r'^db/', include(db_urls)),
     url(r'^blog$', www_views.blog, name='blog'),
     url(r'^book$', www_views.book, name='book'),
     url(r'^clients$', www_views.clients, name='clients'),
