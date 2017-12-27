@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.home, name='db'),
+    url(r'^auth/', include('django.contrib.auth.urls')),
     # Client
     url(r'^client/(?P<pk>\d+)$', views.client_view, name='client_view'),
     url(r'^client/(?P<pk>\d+)/edit$', views.client_edit, name='client_edit'),
