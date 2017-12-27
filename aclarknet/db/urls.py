@@ -1,4 +1,5 @@
 from django.conf.urls import url
+from django.conf.urls import include
 from . import views
 
 urlpatterns = [
@@ -37,7 +38,7 @@ urlpatterns = [
     url(r'^invoice/add$', views.invoice_edit, name='invoice_edit'),
     url(r'^invoice$', views.invoice_index, name='invoice_index'),
     #    # Login
-    #    url(r'^login$', views.login, name='login'),
+    url(r'^login$', views.login, name='login'),
     # Files
     url(r'^file/(?P<pk>\d+)$', views.file_view, name='file_view'),
     url(r'^file/(?P<pk>\d+)/edit$', views.file_edit, name='file_edit'),
@@ -98,9 +99,8 @@ urlpatterns = [
     url(r'^settings/contract$',
         views.settings_contract,
         name='settings_contract'),
-    #    # Social
-    #    url('', include('django.contrib.auth.urls', namespace='auth')),
-    #    url('', include('social_django.urls', namespace='social')),
+    # Social
+    url('', include('social_django.urls', namespace='social')),
     # Task
     url(r'^task/(?P<pk>\d+)$', views.task_view, name='task_view'),
     url(r'^task/(?P<pk>\d+)/edit$', views.task_edit, name='task_edit'),
