@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'taggit',
     'import_export',
     'django_xhtml2pdf',
+    'social_django',
 ]
 
 MIDDLEWARE = [
