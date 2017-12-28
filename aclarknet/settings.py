@@ -147,7 +147,7 @@ DATABASES = {
                 'DB_PORT', '5432'), os.environ.get('DB_NAME', 'aclarknet'))))
 }
 
-# aclarknet
+# aclarknet-{db,www}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
@@ -174,3 +174,17 @@ GEOIP_PATH = BASE_DIR
 
 # https://stackoverflow.com/a/21317596
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+
+# Django social auth
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get(
+    'SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+
+LOGIN_REDIRECT_URL = '/db'
+LOGIN_URL = '/login/google-oauth2/?next=/'
