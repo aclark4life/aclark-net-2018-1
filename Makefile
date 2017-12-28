@@ -420,4 +420,4 @@ aclarknet-db-import:
 	scp -i /Users/alexclark/.ssh/AC.pem note.json ec2-user@54.147.23.87:
 	scp -i /Users/alexclark/.ssh/AC.pem invoice.json ec2-user@54.147.23.87:
 	scp -i /Users/alexclark/.ssh/AC.pem estimate.json ec2-user@54.147.23.87:
-	scp -i /Users/alexclark/.ssh/AC.pem user.json ec2-user@54.147.23.87:
+#	scp -i /Users/alexclark/.ssh/AC.pem user.json ec2-user@54.147.23.87:
