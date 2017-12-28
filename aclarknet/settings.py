@@ -144,7 +144,7 @@ DATABASES = {
         default=os.environ.get('DATABASE_URL', 'postgres://%s:%s@%s:%s/%s' % (
             os.environ.get('DB_USER', ''), os.environ.get('DB_PASS', ''),
             os.environ.get('DB_HOST', 'localhost'), os.environ.get(
-                'DB_PORT', '5432'), os.environ.get('DB_NAME', 'project_app'))))
+                'DB_PORT', '5432'), os.environ.get('DB_NAME', 'aclarknet'))))
 }
 
 # aclarknet
