@@ -182,21 +182,6 @@ class Contract(BaseModel):
             return '-'.join([self._meta.verbose_name, str(self.pk)])
 
 
-class DashboardItem(models.Model):
-    title = models.CharField('Title', null=True, blank=True, max_length=255)
-    order = models.PositiveIntegerField(default=0, blank=False, null=False)
-
-    class Meta(object):
-        ordering = ('order', )
-        verbose_name_plural = "Dashboard Items"
-
-    def __str__(self):
-        if self.title:
-            return self.title
-        else:
-            return self.pk
-
-
 # https://docs.djangoproject.com/en/1.11/ref/contrib/gis/model-api/
 class Elevation(BaseModel):
     name = models.CharField(max_length=100)
@@ -408,8 +393,6 @@ class Profile(BaseModel):
     is_contact = models.BooleanField(default=False)
     notify = models.BooleanField(default=True)
     published = models.BooleanField(default=False)
-    dashboard_override = models.BooleanField(
-        'Override Default Dashboard Settings', default=False)
     dashboard_choices = MultiSelectField(
         'Dashboard Choices', choices=DASHBOARD_CHOICES, null=True, blank=True)
     editor = models.CharField(

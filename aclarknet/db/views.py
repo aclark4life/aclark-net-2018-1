@@ -33,7 +33,6 @@ from .forms import TimeForm
 from .models import Client
 from .models import Contact
 from .models import Contract
-from .models import DashboardItem
 from .models import Estimate
 from .models import File
 from .models import Invoice
@@ -303,7 +302,6 @@ def home(request):
                 'paid': 'false',
             },
         },
-        dashboard_item_model=DashboardItem,
         estimate_model=Estimate,
         invoice_model=Invoice,
         note_model=Note,

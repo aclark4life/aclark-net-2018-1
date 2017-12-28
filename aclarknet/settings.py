@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'import_export',
     'django_xhtml2pdf',
     'social_django',
-    'adminsortable2',
 ]
 
 MIDDLEWARE = [

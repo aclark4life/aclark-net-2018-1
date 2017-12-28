@@ -1,4 +1,3 @@
-from adminsortable2.admin import SortableAdminMixin
 from decimal import Decimal
 from django.contrib import admin
 from django.contrib.gis import admin as geo_admin
@@ -10,7 +9,6 @@ from solo.admin import SingletonModelAdmin
 from .models import Client
 from .models import Contact
 from .models import Contract
-from .models import DashboardItem
 from .models import Estimate
 from .models import Invoice
 from .models import Location
@@ -129,12 +127,6 @@ class ContactAdmin(ImportExportModelAdmin):
 
 @admin.register(Contract)
 class ContractAdmin(ImportExportModelAdmin):
-    """
-    """
-
-
-@admin.register(DashboardItem)
-class DashboardItemAdmin(SortableAdminMixin, admin.ModelAdmin):
     """
     """
 

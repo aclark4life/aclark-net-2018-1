@@ -280,7 +280,6 @@ def get_page_items(**kwargs):
     columns_visible = kwargs.get('columns_visible')
     contact_model = kwargs.get('contact_model')
     contract_model = kwargs.get('contract_model')
-    dashboard_item_model = kwargs.get('dashboard_item_model')
     estimate_model = kwargs.get('estimate_model')
     invoice_model = kwargs.get('invoice_model')
     model = kwargs.get('model')
@@ -457,7 +456,6 @@ def get_page_items(**kwargs):
         elif model_name == 'user':
             exclude_fields = ('id', 'created', 'updated', 'hidden', 'active',
                               'app_admin', 'is_contact', 'notify', 'published',
-                              'dashboard_override', 'dashboard_choices',
                               'editor', 'icon_size', 'icon_color', 'page_size',
                               'preferred_username', 'unit', 'avatar_url')
             user = get_object_or_404(model, pk=pk)
@@ -480,18 +478,6 @@ def get_page_items(**kwargs):
     else:  # home
         if request:
             if request.user.is_authenticated:
-                # Dashboard
-                if request.user.is_staff:  # Staff get a choice of dashboards
-                    dashboard_choices = get_setting(
-                        request, app_settings_model, 'dashboard_choices')
-                else:  # Users get times dashboard only
-                    dashboard_choices = 'times'
-                dashboard_items = [
-                    i.title.lower()
-                    for i in dashboard_item_model.objects.all()
-                ]
-                context['dashboard_choices'] = dashboard_choices
-                context['dashboard_items'] = dashboard_items
                 # Items
                 estimates = estimate_model.objects.filter(
                     accepted_date=None,

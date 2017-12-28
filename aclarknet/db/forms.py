@@ -26,8 +26,7 @@ class AdminProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('rate', 'preferred_payment_method', 'bio', 'address',
-                  'dashboard_override', 'dashboard_choices', 'icon_size',
-                  'notify', 'published')
+                  'dashboard_choices', 'icon_size', 'notify', 'published')
         widgets = {
             'bio': forms.widgets.TextInput(attrs={
                 'class': 'tinymce'
