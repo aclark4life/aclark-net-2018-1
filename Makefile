@@ -391,7 +391,7 @@ pack: webpack  # Alias
 # aclarknet-{db,www}
 
 PROJECT=aclarknet
-APP=www
+APP=db
 
 aclarknet-db-import:
 	scp db:/srv/aclarknet-database/task.json .

@@ -618,7 +618,7 @@ class SettingsApp(SingletonModel):
         max_length=255, blank=True, null=True, choices=ICON_CHOICES)
     icon_color = models.CharField(
         max_length=255, blank=True, null=True, choices=COLOR_CHOICES)
-    page_size = models.PositiveIntegerField(blank=True, default=1, null=True)
+    page_size = models.PositiveIntegerField(blank=True, default=10, null=True)
     dashboard_choices = MultiSelectField(
         'Dashboard Choices', choices=DASHBOARD_CHOICES, null=True, blank=True)
     auto_hide = models.BooleanField(default=True)
