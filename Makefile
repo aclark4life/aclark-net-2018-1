@@ -402,6 +402,8 @@ aclarknet-db-import:
 	scp db:/srv/aclarknet-database/note.json .
 	scp db:/srv/aclarknet-database/invoice.json .
 	scp db:/srv/aclarknet-database/estimate.json .
+	scp db:/srv/aclarknet-database/testimonial.json .
+	scp db:/srv/aclarknet-database/service.json .
 	scp db:/srv/aclarknet-database/user.json .
 	sed -i '' 's/database/db/g' task.json
 	sed -i '' 's/database/db/g' time.json
@@ -411,6 +413,8 @@ aclarknet-db-import:
 	sed -i '' 's/database/db/g' note.json
 	sed -i '' 's/database/db/g' invoice.json
 	sed -i '' 's/database/db/g' estimate.json
+	sed -i '' 's/database/db/g' testimonial.json
+	sed -i '' 's/database/db/g' service.json
 	sed -i '' 's/database/db/g' user.json
 	scp -i /Users/alexclark/.ssh/AC.pem task.json ec2-user@54.147.23.87:
 	scp -i /Users/alexclark/.ssh/AC.pem time.json ec2-user@54.147.23.87:
@@ -420,4 +424,6 @@ aclarknet-db-import:
 	scp -i /Users/alexclark/.ssh/AC.pem note.json ec2-user@54.147.23.87:
 	scp -i /Users/alexclark/.ssh/AC.pem invoice.json ec2-user@54.147.23.87:
 	scp -i /Users/alexclark/.ssh/AC.pem estimate.json ec2-user@54.147.23.87:
-#	scp -i /Users/alexclark/.ssh/AC.pem user.json ec2-user@54.147.23.87:
+	scp -i /Users/alexclark/.ssh/AC.pem testimonial.json ec2-user@54.147.23.87:
+	scp -i /Users/alexclark/.ssh/AC.pem service.json ec2-user@54.147.23.87:
+	scp -i /Users/alexclark/.ssh/AC.pem user.json ec2-user@54.147.23.87:
