@@ -533,7 +533,7 @@ def get_page_items(**kwargs):
         context['icon_size'] = get_setting(request, app_settings_model,
                                            'icon_size')
         context['dashboard_choices'] = get_setting(request, app_settings_model,
-                                           'dashboard_choices')
+                                                   'dashboard_choices')
         pdf = get_query_string(request, 'pdf')  # Export pdf
         context['pdf'] = pdf
         context['request'] = request  # Include request
