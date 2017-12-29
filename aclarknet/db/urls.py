@@ -3,7 +3,7 @@ from django.conf.urls import include
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.home, name='db_home'),
+    url(r'^$', views.home, name='dashboard'),
     url(r'^auth/', include('django.contrib.auth.urls')),
     # Client
     url(r'^client/(?P<pk>\d+)$', views.client_view, name='client_view'),

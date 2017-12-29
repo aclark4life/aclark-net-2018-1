@@ -317,7 +317,7 @@ def home(request):
         time_model=Time,
         report_model=Report,
         request=request)
-    return render(request, 'db_home.html', context)
+    return render(request, 'db/home.html', context)
 
 
 @staff_member_required
