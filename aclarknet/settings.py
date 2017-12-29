@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'import_export',
     'django_xhtml2pdf',
     'social_django',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
