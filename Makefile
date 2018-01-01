@@ -393,7 +393,7 @@ pack: webpack  # Alias
 PROJECT=aclarknet
 APP=db
 
-aclarknet-db-import:
+aclarknet-import:
 	scp db:/srv/aclarknet-database/task.json .
 	scp db:/srv/aclarknet-database/time.json .
 	scp db:/srv/aclarknet-database/project.json .
