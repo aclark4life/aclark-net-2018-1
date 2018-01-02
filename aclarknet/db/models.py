@@ -751,7 +751,7 @@ class Time(BaseModel):
         settings.AUTH_USER_MODEL,
         blank=True,
         null=True,
-        on_delete=models.CASCADE,
+        on_delete=models.SET_NULL,
         limit_choices_to={
             'profile__active': True
         })
