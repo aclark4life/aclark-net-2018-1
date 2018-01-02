@@ -3,14 +3,12 @@ from django.conf import settings
 from django.contrib.gis.db import models
 from django.urls import reverse
 from django.utils import timezone
-from faker import Faker
 from multiselectfield import MultiSelectField
 from phonenumber_field.modelfields import PhoneNumberField
 from solo.models import SingletonModel
 from taggit.managers import TaggableManager
 from uuid import uuid4
 
-fake = Faker()
 
 # https://github.com/goinnn/django-multiselectfield
 COLOR_CHOICES = (
@@ -247,7 +245,7 @@ class File(BaseModel):
     """
     """
     name = models.CharField(
-        max_length=300, blank=True, null=True, default=fake.text)
+        max_length=300, blank=True, null=True)
     doc = models.FileField(blank=True, null=True)
     image = models.ImageField(blank=True, null=True)
 
@@ -310,7 +308,7 @@ class Invoice(BaseModel):
 
 # https://docs.djangoproject.com/en/1.11/ref/contrib/gis/tutorial/#defining-a-geographic-model
 class Location(BaseModel):
-    name = models.CharField(max_length=300, default=fake.text)
+    name = models.CharField(max_length=300)
     area = models.IntegerField(blank=True, null=True)
     pop2005 = models.IntegerField('Population 2005', blank=True, null=True)
     fips = models.CharField('FIPS Code', max_length=2, blank=True, null=True)
@@ -635,33 +633,32 @@ class SettingsContract(SingletonModel):
     """
     """
     parties = models.TextField(
-        'Parties', blank=True, null=True, default=fake.text)
+        'Parties', blank=True, null=True)
     scope_of_work = models.TextField(
-        'Scope of Work', blank=True, null=True, default=fake.text)
+        'Scope of Work', blank=True, null=True)
     payment_terms = models.TextField(
-        'Payment Terms', blank=True, null=True, default=fake.text)
+        'Payment Terms', blank=True, null=True)
     timing_of_payment = models.TextField(
-        'Timing of Payment', blank=True, null=True, default=fake.text)
+        'Timing of Payment', blank=True, null=True)
     contributor_assignment_agreement = models.TextField(
         'Contributor Assignment Agreement',
         blank=True,
-        null=True,
-        default=fake.text)
+        null=True)
     authority_to_act = models.TextField(
-        'Authority to Act', blank=True, null=True, default=fake.text)
+        'Authority to Act', blank=True, null=True)
     termination = models.TextField(
-        'Termination', blank=True, null=True, default=fake.text)
+        'Termination', blank=True, null=True)
     governing_laws = models.TextField(
-        'Governing Laws', blank=True, null=True, default=fake.text)
+        'Governing Laws', blank=True, null=True)
     period_of_agreement = models.TextField(
-        'Period of Agreement', blank=True, null=True, default=fake.text)
+        'Period of Agreement', blank=True, null=True)
     confidentiality = models.TextField(
-        'Confidentiality', blank=True, null=True, default=fake.text)
-    taxes = models.TextField('Taxes', blank=True, null=True, default=fake.text)
+        'Confidentiality', blank=True, null=True)
+    taxes = models.TextField('Taxes', blank=True, null=True)
     limited_warranty = models.TextField(
-        'Limited Warranty', blank=True, null=True, default=fake.text)
+        'Limited Warranty', blank=True, null=True)
     complete_agreement = models.TextField(
-        'Complete Agreement', blank=True, null=True, default=fake.text)
+        'Complete Agreement', blank=True, null=True)
 
     class Meta:
         verbose_name = "Settings Contract"
