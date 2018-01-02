@@ -16,7 +16,7 @@ from .models import SettingsCompany
 from .models import SettingsContract
 from .models import Task
 from .models import Time
-from .models import DASHBOARD_CHOICES
+from .models import DASHBOARD_ITEMS
 from django import forms
 from taggit.models import Tag
 from django.utils import timezone
@@ -26,16 +26,16 @@ class AdminProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('rate', 'preferred_payment_method', 'bio', 'address',
-                  'dashboard_choices', 'icon_size', 'notify', 'published')
+                  'dashboard_items', 'icon_size', 'notify', 'published')
         widgets = {
             'bio': forms.widgets.TextInput(attrs={
                 'class': 'tinymce'
             }),
         }
 
-    dashboard_choices = forms.MultipleChoiceField(
-        choices=DASHBOARD_CHOICES,
-        label='Dashboard Choices',
+    dashboard_items = forms.MultipleChoiceField(
+        choices=DASHBOARD_ITEMS,
+        label='Dashboard Items',
         required=False,
         widget=forms.SelectMultiple(attrs={
             'size': '6',
@@ -197,7 +197,7 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('rate', 'bio', 'address', 'preferred_payment_method',
-                  'icon_size', 'dashboard_choices')
+                  'icon_size', 'dashboard_items')
         widgets = {
             'bio': forms.widgets.TextInput(attrs={
                 'class': 'tinymce'

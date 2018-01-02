@@ -21,7 +21,7 @@ COLOR_CHOICES = (
     ('warning', 'Warning'),
 )
 
-DASHBOARD_CHOICES = (
+DASHBOARD_ITEMS = (
     ('estimates', 'Estimates'),
     ('invoices', 'Invoices'),
     ('notes', 'Notes'),
@@ -391,8 +391,8 @@ class Profile(BaseModel):
     is_contact = models.BooleanField(default=False)
     notify = models.BooleanField(default=True)
     published = models.BooleanField(default=False)
-    dashboard_choices = MultiSelectField(
-        'Dashboard Choices', choices=DASHBOARD_CHOICES, null=True, blank=True)
+    dashboard_items = MultiSelectField(
+        'Dashboard Items', choices=DASHBOARD_ITEMS, null=True, blank=True)
     editor = models.CharField(
         max_length=8, choices=EDITOR_CHOICES, null=True, blank=True)
     user = models.OneToOneField(
@@ -600,8 +600,6 @@ class SettingsApp(SingletonModel):
     icon_color = models.CharField(
         max_length=255, blank=True, null=True, choices=COLOR_CHOICES)
     page_size = models.PositiveIntegerField(blank=True, default=10, null=True)
-    dashboard_choices = MultiSelectField(
-        'Dashboard Choices', choices=DASHBOARD_CHOICES, null=True, blank=True)
     auto_hide = models.BooleanField(default=True)
     exclude_hidden = models.BooleanField(default=True)
     tags = models.CharField(max_length=255, blank=True, null=True)
