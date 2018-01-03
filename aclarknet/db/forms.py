@@ -204,6 +204,14 @@ class ProfileForm(forms.ModelForm):
             }),
         }
 
+    dashboard_items = forms.MultipleChoiceField(
+        choices=(('times', 'Times'), ),  # Limit choices
+        label='Dashboard Items',
+        required=False,
+        widget=forms.SelectMultiple(attrs={
+            'size': '6',
+        }))
+
 
 class ProjectForm(forms.ModelForm):
     class Meta:

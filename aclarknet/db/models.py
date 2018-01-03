@@ -9,7 +9,6 @@ from solo.models import SingletonModel
 from taggit.managers import TaggableManager
 from uuid import uuid4
 
-
 # https://github.com/goinnn/django-multiselectfield
 COLOR_CHOICES = (
     ('danger', 'Danger'),
@@ -244,8 +243,7 @@ class Estimate(BaseModel):
 class File(BaseModel):
     """
     """
-    name = models.CharField(
-        max_length=300, blank=True, null=True)
+    name = models.CharField(max_length=300, blank=True, null=True)
     doc = models.FileField(blank=True, null=True)
     image = models.ImageField(blank=True, null=True)
 
@@ -630,24 +628,17 @@ class SettingsCompany(SingletonModel):
 class SettingsContract(SingletonModel):
     """
     """
-    parties = models.TextField(
-        'Parties', blank=True, null=True)
-    scope_of_work = models.TextField(
-        'Scope of Work', blank=True, null=True)
-    payment_terms = models.TextField(
-        'Payment Terms', blank=True, null=True)
+    parties = models.TextField('Parties', blank=True, null=True)
+    scope_of_work = models.TextField('Scope of Work', blank=True, null=True)
+    payment_terms = models.TextField('Payment Terms', blank=True, null=True)
     timing_of_payment = models.TextField(
         'Timing of Payment', blank=True, null=True)
     contributor_assignment_agreement = models.TextField(
-        'Contributor Assignment Agreement',
-        blank=True,
-        null=True)
+        'Contributor Assignment Agreement', blank=True, null=True)
     authority_to_act = models.TextField(
         'Authority to Act', blank=True, null=True)
-    termination = models.TextField(
-        'Termination', blank=True, null=True)
-    governing_laws = models.TextField(
-        'Governing Laws', blank=True, null=True)
+    termination = models.TextField('Termination', blank=True, null=True)
+    governing_laws = models.TextField('Governing Laws', blank=True, null=True)
     period_of_agreement = models.TextField(
         'Period of Agreement', blank=True, null=True)
     confidentiality = models.TextField(
