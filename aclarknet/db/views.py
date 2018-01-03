@@ -110,6 +110,7 @@ def get_company_name(model):
     company_name = company_name.replace('(', '_')
     company_name = company_name.replace(')', '_')
     company_name = company_name.replace(' ', '_')
+    company_name = company_name.replace('\n', '_')
     company_name = company_name.upper()
     return company_name
 
