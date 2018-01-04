@@ -106,8 +106,6 @@ def edit(request, **kwargs):
                 invoice_model=invoice_model,
                 model=model,
                 project_model=project_model)
-            # if model_name == 'time':
-            #     mail_proc(obj, request=request)  # XXX Use signal?
             return obj_redir(obj, pk=pk)
     context['form'] = form
     context['is_staff'] = request.user.is_staff
@@ -169,9 +167,6 @@ def get_form(**kwargs):
                 form = form_model(instance=obj, initial={'invoices': invoices})
             elif model_name == 'contact':  # Populate new contact
                 # with appropriate fields
-                # if query_user:
-                #     user = get_object_or_404(user_model, pk=query_user)
-                #     obj = model(email=user.email)
                 if query_client:
                     client = get_object_or_404(client_model, pk=query_client)
                     obj = model(client=client)
@@ -673,14 +668,6 @@ def set_relationship(obj, request, **kwargs):
         query_estimate = get_query_string(request, 'estimate')
         query_invoice = get_query_string(request, 'invoice')
         query_project = get_query_string(request, 'project')
-        # if not request.user.is_staff:  # Staff have more than one project
-        #     user_projects = project_model.objects.filter(
-        #         team__in=[
-        #             obj.user,
-        #         ])
-        #     if len(user_projects) > 0:
-        #         obj.project = user_projects[0]
-        #         obj.task = obj.project.task
         if query_estimate:
             estimate = get_object_or_404(estimate_model, pk=query_estimate)
             obj.estimate = estimate
