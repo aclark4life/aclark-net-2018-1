@@ -1,45 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'page.html' %}
 {% load staticfiles %}
 {% block content %}
-              <div class="row jumbotron">
-                <div class="col-md-12">
-                  <h1>ACLARK.NET, LLC &mdash; Professional Python&trade; Web Development Services</h1>
-                  <h2>We empower you through Python&trade; and related technologies.</h2>
-                </div>
-              </div>
-              <div class="row" style="background: white; margin: 0.1rem; padding: 2rem;">
-                <div class="col-md-12">
-                <p class="lead">The Python&trade; programming language and open source software provide tremendous opportunities, but often require an expert to take advantage of. We are able &amp; available to help by providing services that empower individuals and organizations to benefit from these opportunities.</p>
-                <div> 
-              <div> 
-              <div class="row" id="sitemap">
-                <div class="col-md-12" style="margin-bottom: 1em">
-                  <h2>Sitemap</h2>
-                </div>
-                <div class="col-md-4">
-                  <ul>
-                    <li class="lead"><i class="fa fa-bullhorn"></i> <a href="{% url 'blog' %}">Blog</a></li>
-                    <li class="lead"><i class="fa fa-book"></i> <a href="{% url 'book' %}">Book</a></li>
-                    <li class="lead"><i class="fa fa-building"></i> <a href="{% url 'clients' %}">Clients</a></li>
-                    <li class="lead"><i class="fa fa-globe"></i> <a href="{% url 'community' %}">Community Service</a></li>
-                  </ul>
-                </div>
-                <div class="col-md-4">
-                  <ul>
-                    <li class="lead"><i class="fa fa-send"></i> <a href="{% url 'contact' %}">Contact</a></li>
-                    <li class="lead"><i class="fa fa-clock-o"></i> <a href="{% url 'history' %}">History</a></li>
-                    <li class="lead"><i class="fa fa-location-arrow"></i> <a href="{% url 'location' %}">Location</a></li>
-                    <li class="lead"><i class="fa fa-folder-o"></i> <a href="{% url 'projects' %}">Projects</a></li>
-                  </ul>
-                </div>
-                <div class="col-md-4">
-                  <ul>
-                    <li class="lead"><i class="fa fa-users"></i> <a href="{% url 'team' %}">Team</a></li>
-                    <li class="lead"><i class="fa fa-thumbs-o-up"></i> <a href="{% url 'testimonials' %}">Testimonials</a></li>
-                    <li class="lead"><i class="fa fa-code"></i> <a href="{% url 'open-source' %}">Open Source</a></li>
-                    <li class="lead"><i class="fa fa-cog"></i> <a href="{% url 'services' %}">Services</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+  <div class="block-xs-middle pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-lg-6">
+          <h1 class="block-titleData frequency">We empower you through Python&trade; and related technologies.</h1>
+          <p class="lead mb-4 text-muted">The Python&trade; programming language in particular and open source software in general provide tremendous opportunities, but often require an expert to take advantage of. We are fully able &amp; available to help by providing services that empower individuals and organizations to benefit from these opportunities.</p>
+          <a class="btn btn-primary btn-lg" href="{% url 'contact' %}">Try it now</a>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
