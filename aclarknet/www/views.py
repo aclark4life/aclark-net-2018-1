@@ -6,12 +6,13 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.utils import timezone
+import os
 import random
 import requests
 
 # Create your views here.
 
-BASE_URL = 'https://aclark.net'
+BASE_URL = 'https://%s' % os.environ.get('API_HOST', 'aclark.net')
 CLIENT_URL = '%s/api/clients/?format=json' % BASE_URL
 SERVICE_URL = '%s/api/services/?format=json' % BASE_URL
 TESTIMONIAL_URL = '%s/api/testimonials/?format=json' % BASE_URL
