@@ -53,7 +53,7 @@
           <a class="nav-link" href="{% url 'about' %}">About</a>
         </li>
         <li class="nav-item px-1 ">
-          <a class="nav-link" href="#contact">Projects</a>
+          <a class="nav-link" href="#projects">Projects</a>
         </li>
         <li class="nav-item px-1 ">
           <a class="nav-link" href="#services">Services</a>
@@ -89,18 +89,29 @@
         <img class="app-iphone" src="{% static 'startup-2.jpg' %}" style="width: 100%;">
       </div>
 
-      <div class="col-md-6 col-sm-12 ml-auto">
-        <h6 class="text-muted text-uppercase">Rich Information</h6>
-        <h2>Make informed decisions with historical &amp; real time data.</h2>
-        <p class="lead mb-4">We combine immediate real time events with rich historical data to help answer the toughest questions about retention, growth, and engagement.</p>
+      <div class="col-md-6 col-sm-12 ml-auto" id="projects">
+        <h6 class="text-muted text-uppercase">Projects</h6>
+        <h2>If you are using one of these Python-based web frameworks, we want to work with you.</h2>
+        <p class="lead mb-4">Or if not, we can offer compelling reasons to try.</p>
         <div class="row d-none d-md-flex">
           <div class="col-sm-6 mb-3">
-            <h5>Data frequency</h5>
-            <p>We poll for data on a millisecond basis. You can react to new information in seconds rather than days. <a href="#" class="text-primary">Learn more.</a></p>
+            <h5>Django</h5>
+            <p>Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source. <a href="https://djangoproject.com" class="text-primary" target="_blank">Learn more.</a></p>
           </div>
           <div class="col-sm-6">
-            <h5>Reliability &amp; uptime</h5>
-            <p>We process our data across a massively distributed network of reliable servers to ensure 99.99% uptime, always. <a href="#" class="text-primary">Learn more</a>.</p>
+            <h5>Plone</h5>
+            <p>Plone is a ready-to-run content management system that is built on Python. Plone is easy, flexible, and gives you a system for web content that is ideal for projects, communities, websites and intranets. <a href="https://plone.com" class="text-primary" target="_blank">Learn more</a>.</p>
+          </div>
+        </div>
+        <div class="row d-none d-md-flex">
+          <div class="col-sm-6 mb-3">
+            <h5>Pyramid</h5>
+            <p>Pyramid makes it easy to write web applications. You can start small with this "hello world" minimal request/response web app. This may take you far, especially while learning. As your application grows, Pyramid offers many features that make writing complex software take less effort. <a href="https://trypyramid.com" class="text-primary" target="_blank">Learn more.</a></p>
+          </div>
+          <div class="col-sm-6">
+            <h5>Zope</h5>
+            <p>Zope is a community project concerned with a free and open-source, object-oriented web application server written in the Python programming language. Zope has been recognized as a Python killer app, an application that helped put Python in the spotlight. <a href="https://zope.readthedocs.io" class="text-primary" target="_blank">Learn more</a>.
+</p>
           </div>
         </div>
       </div>
@@ -109,7 +120,7 @@
   </div>
 </div>
 
-<div class="block block-inverse block-secondary app-code-block" id="contact">
+<div class="block block-inverse block-secondary app-code-block"> 
   <div class="container">
     <div class="row app-align-center">
       <div class="col-md-6 order-2 order-md-1">
@@ -149,8 +160,8 @@
       <div class="row app-align-center py-3 justify-content-end">
         <div class="col-sm-7 col-md-5 py-5">
           <h6 class="text-muted text-uppercase mb-2">High Praise</h6>
-          <h2 class="mb-4">“Go Analytics is amazing. Decisions that used to take weeks, now only takes minutes and is available to everyone on my team.”</h2>
-          <p class="mb-4 text-muted">Cindy Smith, founder of Cool Startup</p>
+          <h2 class="mb-4">{{ testimonial.description }}</h2>
+          <p class="mb-4 text-muted">{{ testimonial.name }}, {{ testimonial.title }}</p>
         </div>
       </div>
   </div>
