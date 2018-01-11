@@ -69,16 +69,25 @@
   <div class="container">
     <div class="row app-align-center">
 
-      {% for profile in profiles %}
-      <hr class="featurette-divider" id="{{profile.get_username }}">
-      <div class="row">
-        <div class="col-md-12">
-          <img class="img-thumbnail pull-left" src="{{ profile.get_avatar_url }}" style="margin: 0 1em 1em 0">
-          <h2>{{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
-          <p class="lead">{{ profile.bio|safe|default:'' }}</p>
-        </div>
+      <div class="col-sm-5 d-none d-md-block">
+        <img class="app-iphone" src="{% static 'startup-2.jpg' %}" style="width: 100%;">
       </div>
-      {% endfor %}
+
+      <div class="col-md-6 col-sm-12 ml-auto" id="team">
+
+        <h6 class="text-muted text-uppercase">Team</h6>
+
+          {% for profile in profiles %}
+          <div class="row" id="{{profile.get_username }}">
+            <div class="col-md-12">
+              <img class="img-thumbnail pull-left" src="{{ profile.get_avatar_url }}" style="margin: 0 1em 1em 0">
+              <h2>{{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
+              <p class="lead">{{ profile.bio|safe|default:'' }}</p>
+            </div>
+          </div>
+          {% endfor %}
+
+      </div>
 
     </div>
 
