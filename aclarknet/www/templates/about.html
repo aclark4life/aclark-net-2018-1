@@ -71,45 +71,22 @@
     <div class="row app-align-center">
       <div class="col-md-6 order-2 order-md-1">
         <h6 class="text-muted text-uppercase">Easy development</h6>
-        <h2>Natural language queries make mining data easy for anyone.</h2>
-        <p class="lead mb-4 text-muted">Rather than force everyone at your company to learn incredibly difficult terminal commands, we allow anyone to query the data with natural language to return data.</p>
-        <button class="btn btn-secondary btn-lg btn-borderless">
+        <h2>Image processing with Pillow.</h2>
+        <p class="lead mb-4 text-muted">Alex Clark created Pillow (a fork of the popular Python Imaging Library created by Fredrik Lundh). As a result, you can benefit from professional Python Imaging Library support.</p>  
+        <a class="btn btn-secondary btn-lg btn-borderless" href="https://pillow.readthedocs.io">
           Read our docs
-        </button>
+        </a>
       </div>
       <div class="col-md-5 ml-auto order-1 order-md-2">
         <pre class="app-code">
-<span>1</span> <span>goAnalytics</span> “who are the latest 3 users?”
-<span>2</span>
-<span>3</span>  {
-<span>4</span>    "Dave": {
-<span>5</span>      "fullName": "Dave Gamache",
-<span>6</span>      "twitterHandle": "@dhg",
-<span>7</span>    }
-<span>8</span>    "Mark": {
-<span>9</span>      "fullName": "Mark Otto",
-<span>10</span>      "twitterHandle": "@mdo",
-<span>11</span>    }
-<span>12</span>    "Jacob": {
-<span>13</span>      "fullName": "Jacob Thornton",
-<span>14</span>      "twitterHandle": "@fat",
-<span>15</span>    }
-<span>16</span>  }</pre>
+<span>1</span> >>> from PIL import Image
+<span>2</span> >>> im = Image.open("hopper.ppm")
+<span>3</span>
+<span>4</span> >>> from __future__ import print_function
+<span>5</span> >>> print(im.format, im.size, im.mode)
+<span>6</span> PPM (512, 512) RGB</pre>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="block block-inverse app-high-praise"
-     style="background-image: url({% static 'startup-3.jpg' %});" id="testimonials">
-    <div class="container">
-      <div class="row app-align-center py-3 justify-content-end">
-        <div class="col-sm-7 col-md-5 py-5">
-          <h6 class="text-muted text-uppercase mb-2">High Praise</h6>
-          <h2 class="mb-4">{{ testimonial.description }}</h2>
-          <p class="mb-4 text-muted">{{ testimonial.name }}, {{ testimonial.title }}</p>
-        </div>
-      </div>
   </div>
 </div>
 
