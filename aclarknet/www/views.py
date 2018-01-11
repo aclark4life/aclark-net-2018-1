@@ -132,7 +132,6 @@ def team(request):
     context = {}
     profiles = requests.get(PROFILE_URL).json()
     context['profiles'] = profiles
-    context['active_nav'] = 'team'
     return render(request, 'team.html', context)
 
 
