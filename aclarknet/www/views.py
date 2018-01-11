@@ -136,5 +136,6 @@ def team(request):
     return render(request, 'team.html', context)
 
 
-def now(request):
-    return HttpResponseRedirect('http://blog.aclark.net/now')
+def work(request):
+    context = {}
+    return render(request, 'work.html', context)

@@ -45,4 +45,5 @@ urlpatterns = [
     url(r'^testimonials$', www_views.testimonials, name='testimonials'),
     url(r'^location$', www_views.location, name='location'),
     url(r'^history$', www_views.history, name='history'),
+    url(r'^work$', www_views.work, name='work'),
 ]
