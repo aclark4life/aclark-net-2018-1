@@ -138,4 +138,6 @@ def team(request):
 
 def work(request):
     context = {}
+    testimonials = requests.get(TESTIMONIAL_URL).json()
+    context['testimonial'] = random.choice(testimonials)
     return render(request, 'work.html', context)
