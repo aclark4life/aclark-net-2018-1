@@ -91,7 +91,7 @@ def home(request):
     context['show_carousel'] = True
     testimonials = requests.get(TESTIMONIAL_URL).json()
     context['testimonial'] = random.choice(testimonials)
-    return render(request, 'home.html', context)
+    return render(request, 'page.html', context)
 
 
 def location(request):
