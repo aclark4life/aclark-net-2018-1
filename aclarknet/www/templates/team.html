@@ -78,8 +78,8 @@
 
           {% for profile in profiles %}
           <div class="row" id="{{profile.get_username }}">
-            <div class="col-md-12">
-              <img class="img-thumbnail pull-left" src="{{ profile.get_avatar_url }}" style="margin: 0 1em 1em 0">
+            <div class="col-md-12 mb-5">
+              <img class="img-thumbnail" src="{{ profile.get_avatar_url }}" style="margin: 0 1em 1em 0">
               <h2>{{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
               <p class="lead">{{ profile.bio|safe|default:'' }}</p>
             </div>
