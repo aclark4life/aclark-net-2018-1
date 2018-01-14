@@ -61,8 +61,8 @@ urlpatterns = [
     url(r'^note/(?P<pk>\d+)/edit$', views.note_edit, name='note_edit'),
     url(r'^note/add$', views.note_edit, name='note_edit'),
     url(r'^note$', views.note_index, name='note_index'),
-    #    # Plot
-    #    url(r'^plot$', views.plot, name='plot'),
+    # Plot
+    url(r'^plot$', views.plot, name='plot'),
     # Project
     url(r'^project/(?P<pk>\d+)$', views.project_view, name='project_view'),
     url(r'^project/(?P<pk>\d+)/edit$', views.project_edit,
