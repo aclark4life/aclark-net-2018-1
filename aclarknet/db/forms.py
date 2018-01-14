@@ -259,6 +259,14 @@ class ReportForm(forms.ModelForm):
     invoices = forms.ModelMultipleChoiceField(
         required=False, queryset=Invoice.objects.all().order_by('-issue_date'))
 
+    date = forms.DateField(
+        widget=forms.DateInput(attrs={
+            'type': 'date',
+            'class': 'col-2'
+        }),
+        required=False,
+        initial=timezone.now())
+
 
 class ServiceForm(forms.ModelForm):
     class Meta:
