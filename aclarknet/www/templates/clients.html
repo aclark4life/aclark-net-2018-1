@@ -3,30 +3,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
 
-    <title>
-      
-        ACLARK.NET, LLC
-      
-    </title>
-
-    
-      <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
-      <link href="{% static 'toolkit-startup.css' %}" rel="stylesheet">
-      <link href="{% static 'application-startup.css' %}" rel="stylesheet">
-    
-
-  </head>
-
+{% include 'head.html' %}
 
 <body>
+
+{% include 'stage.html' %}
 
 <div class="stage" id="stage">
 
@@ -58,40 +40,37 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-10 col-lg-6">
-          <h1 class="block-titleData frequency">A partial list of our valued clients.</h1> 
+          <h1 class="block-titleData frequency">A partial list of our valued clients.</h1>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="block block-secondary app-iphone-block" id="projects"> 
-  <div class="container">
-    <div class="row app-align-center">
-
-      <div class="col-sm-5 d-none d-md-block">
+<div class="block app-price-plans" id="services">
+  <div class="container text-center">
+    <div class="row mb-5 justify-content-center">
+      <div class="col-10 col-md-8 col-lg-6">
+        <h2>Our Clients</h2>
       </div>
-
-      <div class="col-md-6 col-sm-12 ml-auto" id="team">
-
-        <h6 class="text-muted text-uppercase">Our Clients</h6>
-
-        {% for client in clients %}
-        <div class="row mb-5">
-          <div class="col-md-12">
-            <i class="fa fa-{% if client.icon %}{{ client.icon }}{% else %}building{% endif %} fa-5x pull-left"></i>
+    </div>
+    <div class="row">
+      {% for client in clients %}
+      <div class="col-md-4 px-4 pb-2 mb-5"> 
+        <div class="px-2">
+          <i class="fa fa-building fa-5x mb-1"></i>
             <h3>{{ client.name }}</h3>
             <p class="lead">{{ client.description|striptags }}</p>
           </div>
         </div>
         {% endfor %}
-
+        </div>
       </div>
-
     </div>
-
   </div>
 </div>
+
+
 
 {% include 'footer.html' %}
 
