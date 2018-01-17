@@ -74,34 +74,6 @@
   </div>
 </div>
 
-
-<div class="block block-inverse block-secondary app-code-block">
-  <div class="container">
-    <div class="row app-align-center">
-      <div class="col-md-6 order-2 order-md-1">
-        <h6 class="text-muted text-uppercase">Open source</h6>
-        <h2>Image processing with Pillow.</h2>
-        <div class="col-sm-5 d-none d-md-block">
-          <img class="app-iphone" src="{% static 'pillow-logo.png' %}" style="width: 100%;">
-        </div>
-        <p class="lead mb-4 text-muted">Alex Clark created Pillow (a fork of the popular Python Imaging Library created by Fredrik Lundh). As a result, you can benefit from professional Python Imaging Library support.</p>
-        <a class="btn btn-secondary btn-lg btn-borderless" href="https://pillow.readthedocs.io">
-          Read our docs
-        </a>
-      </div>
-      <div class="col-md-5 ml-auto order-1 order-md-2">
-        <pre class="app-code">
-<span>1</span> >>> from PIL import Image
-<span>2</span> >>> im = Image.open("hopper.ppm")
-<span>3</span>
-<span>4</span> >>> from __future__ import print_function
-<span>5</span> >>> print(im.format, im.size, im.mode)
-<span>6</span> PPM (512, 512) RGB</pre>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="block block-secondary app-iphone-block" id="projects"> 
   <div class="container">
     <div class="row app-align-center">
@@ -138,6 +110,97 @@
         </div>
       </div>
     </div>
+
+  </div>
+</div>
+
+<div class="block block-inverse block-secondary app-code-block">
+  <div class="container">
+    <div class="row app-align-center">
+      <div class="col-md-6 order-2 order-md-1">
+        <h6 class="text-muted text-uppercase">Open source</h6>
+        <h2>Image processing with Pillow.</h2>
+        <div class="col-sm-5 d-none d-md-block">
+          <img class="app-iphone" src="{% static 'pillow-logo.png' %}" style="width: 100%;">
+        </div>
+        <p class="lead mb-4 text-muted">Alex Clark created Pillow (a fork of the popular Python Imaging Library created by Fredrik Lundh). As a result, you can benefit from professional Python Imaging Library support.</p>
+        <a class="btn btn-secondary btn-lg btn-borderless" href="https://pillow.readthedocs.io">
+          Read our docs
+        </a>
+      </div>
+      <div class="col-md-5 ml-auto order-1 order-md-2">
+        <pre class="app-code">
+<span>1</span> >>> from PIL import Image
+<span>2</span> >>> im = Image.open("hopper.ppm")
+<span>3</span>
+<span>4</span> >>> from __future__ import print_function
+<span>5</span> >>> print(im.format, im.size, im.mode)
+<span>6</span> PPM (512, 512) RGB</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="block block-secondary app-block-marketing-grid" id="about">
+  <div class="container text-xs-center">
+
+    <div class="row mb-5 justify-content-center">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <h6 class="text-muted text-uppercase mb-2">Our Company</h6>
+        <h2 class="mb-4">A timeline of significant events.</h2>
+      </div>
+
+    </div>
+
+    <div class="row app-marketing-grid">
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-1" src="{% static 'startup-11.svg' %}">
+        <p><strong>In 2004,</strong> Alex Clark was inspired by the Plone CMS project to make his first contributions to open source. For the next few years, he contributed to several Plone add-ons including Products.PloneHelpCenter, Products.PloneSoftwareCenter, and Products.PloneOrg.</p>
+      </div>
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-1" src="{% static 'startup-11.svg' %}">
+        <p><strong>In 2004,</strong> Alex Clark began doing business as ACLARK.NET; a Maryland, USA registered trade name. His first client was a company with a Plone website in London, England. </p>
+      </div>
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-1" src="{% static 'startup-11.svg' %}">
+        <p><strong>In 2007,</strong> Amy Clark created ACLARK.NET, LLC; a Maryland, USA limited liability corporation. Our client list began to grow.</p>
+      </div>
+    </div>
+
+    <div class="row app-marketing-grid">
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-1" src="{% static 'startup-11.svg' %}">
+        <p><strong>In early 2008,</strong> Amy Clark created ZPUGDC, Inc; a non-profit 501(c)(3) corporation in Maryland, USA. With this organization we hosted Plone Conference 2008.</p>
+      </div>
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-3" src="{% static 'startup-11.svg' %}">
+        <p><strong>In late 2008,</strong> we made one of our most significant contributions to the community by organizing and hosting Plone Conference 2008 in DC.</p>
+      </div>
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-1" src="{% static 'startup-11.svg' %}">
+        <p><strong>In 2009,</strong> In 2009, Alex Clark completed his first Plone Improvement Proposal: Add ability to choose group when adding new site members.</p>
+      </div>
+    </div>
+
+    <div class="row mb-5 justify-content-center">
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-1" src="{% static 'startup-11.svg' %}">
+        <p><strong>In 2010,</strong> Alex Clark created Pillow (a fork of the popular Python Imaging Library created by Fredrik Lundh). As of early 2017, Pillow has been downloaded over 15 million times, can be found in many major Linux distributions such as Ubuntu &amp; Fedora Core, and is used by Fortune-100-serving companies like Atlassian. Please contact us for professional Pillow support.
+      </div>
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-1" src="{% static 'startup-11.svg' %}">
+        <p><strong>In 2011,</strong> In 2011, Alex Clark completed his second Plone Improvement Proposal: Add 'test mail server' form to Mail Settings.</p>
+      </div>
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-1" src="{% static 'startup-11.svg' %}">
+        <p><strong>In 2014,</strong> we reached a milestone 10 years in business.</p>
+      </div>
+    </div>
+  <div class="container text-xs-center">
+    <img class="col-3" src="{% static 'dcpython.png' %}">
+    <img class="col-3" src="{% static 'ploneconf.png' %}">
+    <img class="col-3" src="{% static 'pillow-logo.png' %}">
+  </div>
 
   </div>
 </div>
