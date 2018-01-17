@@ -60,6 +60,20 @@
   </div>
 </div>
 
+<div class="block block-inverse app-high-praise"
+     style="background-image: url({% static 'startup-3.jpg' %});" id="testimonials">
+    <div class="container">
+      <div class="row app-align-center py-3 justify-content-end">
+        <div class="col-sm-7 col-md-5 py-5">
+          <h6 class="text-muted text-uppercase mb-2">Testimonials</h6>
+          <h2 class="mb-4">{{ testimonial.description }}</h2>
+          <p class="mb-4 text-muted">{{ testimonial.name }}, {{ testimonial.title }}</p>
+          <a class="btn btn-primary btn-lg" href="{% url 'testimonials' %}">More testimonials</a>
+        </div>
+      </div>
+  </div>
+</div>
+
 {% include 'footer.html' %}
 
 </div>

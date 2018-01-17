@@ -40,7 +40,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-10 col-lg-6">
-          <h1 class="block-titleData frequency">We offer a variety of professional technical services including software development, systems administration and more.</h1>
+          <h1 class="block-titleData frequency">Our Testimonials</h1>
         </div>
       </div>
     </div>
@@ -49,17 +49,12 @@
 
 <div class="block app-price-plans" id="services">
   <div class="container text-center">
-    <div class="row mb-5 justify-content-center">
-      <div class="col-10 col-md-8 col-lg-6">
-        <h2>Our Testimonials</h2>
-      </div>
-    </div>
     <div class="row">
       {% for testimonial in testimonials %}
       <div class="col-md-4 px-4 pb-2 mb-5" id="testimonials">
         <div class="px-2 mb-2">
           <i class="fa fa-commenting fa-5x mb-1"></i>
-          <p class="pb-2"><i class="fa fa-quote-left"></i> <strong>{{ testimonial.description }} </strong> <i class="fa fa-quote-right"></i></p>
+          <p class="pb-2 lead"><i class="fa fa-quote-left"></i> <strong>{{ testimonial.description }} </strong> <i class="fa fa-quote-right"></i></p>
           <p class="float-right">{{ testimonial.issue_date }}</p>
           <p>&mdash;{{ testimonial.name }}, {{ testimonial.title }}, </p>
         </div>
