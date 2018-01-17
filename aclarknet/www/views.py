@@ -46,7 +46,8 @@ def clients(request):
     context = {}
     clients = requests.get(CLIENT_URL).json()
     context['clients'] = clients
-    context['active_nav'] = 'clients'
+    testimonials = requests.get(TESTIMONIAL_URL).json()
+    context['testimonial'] = random.choice(testimonials)
     return render(request, 'clients.html', context)
 
 
@@ -87,9 +88,6 @@ def history(request):
 
 def home(request):
     context = {}
-    context['show_carousel'] = True
-    testimonials = requests.get(TESTIMONIAL_URL).json()
-    context['testimonial'] = random.choice(testimonials)
     return render(request, 'page.html', context)
 
 
