@@ -115,7 +115,6 @@ def services(request):
     context = {}
     services = requests.get(SERVICE_URL).json()
     context['services'] = services
-    context['active_nav'] = 'services'
     return render(request, 'services.html', context)
 
 
