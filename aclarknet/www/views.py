@@ -36,11 +36,6 @@ def blog(request):
     return render(request, 'blog.html', context)
 
 
-def book(request):
-    context = {}
-    return render(request, 'book.html', context)
-
-
 def clients(request):
     context = {}
     clients = requests.get(CLIENT_URL).json()
@@ -48,11 +43,6 @@ def clients(request):
     testimonials = requests.get(TESTIMONIAL_URL).json()
     context['testimonial'] = random.choice(testimonials)
     return render(request, 'clients.html', context)
-
-
-def community(request):
-    context = {}
-    return render(request, 'community.html', context)
 
 
 def contact(request):
@@ -77,29 +67,9 @@ def contact(request):
     return render(request, 'contact.html', context)
 
 
-def history(request):
-    context = {}
-    return render(request, 'history.html', context)
-
-
 def home(request):
     context = {}
     return render(request, 'page.html', context)
-
-
-def location(request):
-    context = {}
-    return render(request, 'location.html', context)
-
-
-def opensource(request):
-    context = {}
-    return render(request, 'opensource.html', context)
-
-
-def projects(request):
-    context = {}
-    return render(request, 'projects.html', context)
 
 
 def services(request):
@@ -121,10 +91,3 @@ def team(request):
     profiles = requests.get(PROFILE_URL).json()
     context['profiles'] = profiles
     return render(request, 'team.html', context)
-
-
-def work(request):
-    context = {}
-    testimonials = requests.get(TESTIMONIAL_URL).json()
-    context['testimonial'] = random.choice(testimonials)
-    return render(request, 'work.html', context)
