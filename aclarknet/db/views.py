@@ -230,7 +230,16 @@ def estimate_view(request, pk=None):
         project_model=Project,
         time_model=Time,
         request=request)
-    return render(request, 'estimate_view.html', context)
+    if context['pdf']:
+        company_name = get_company_name(SettingsCompany)
+        return render_pdf(
+            request,
+            'invoice_pdf.html',
+            context,
+            pk=pk,
+            company_name=company_name)
+    else:
+        return render(request, 'estimate_view.html', context)
 
 
 @staff_member_required
