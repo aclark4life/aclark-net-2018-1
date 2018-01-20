@@ -45,7 +45,9 @@
         </main>
       </div>
     </div>
+    {% if not request.user.is_anonymous %}
 {% include 'footer.html' %}
+    {% endif %}
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
