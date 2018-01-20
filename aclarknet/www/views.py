@@ -32,8 +32,7 @@ def page(request, slug=None):
 
 
 def blog(request):
-    context = {}
-    return render(request, 'blog.html', context)
+    return HttpResponseRedirect('http://blog.aclark.net')
 
 
 def clients(request):
