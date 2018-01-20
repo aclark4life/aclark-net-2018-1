@@ -7,6 +7,5 @@
             {% if is_staff %}<li class="nav-item {% if active_nav == 'estimate' %}bg-success px-1 {% endif %}"><a class="nav-link text-dark" href="{% url 'estimate_index' %}">Estimates</a></li>{% endif %}
             {% if is_staff %}<li class="nav-item {% if active_nav == 'user' %}bg-success px-1 {% endif %}"><a class="nav-link text-dark" href="{% url 'user_index' %}">Users</a></li>{% endif %}
             {% endif %}
-            {% endif %}
           </ul>
         </nav>
