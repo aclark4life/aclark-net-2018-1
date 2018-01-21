@@ -373,7 +373,7 @@ class TaskForm(forms.ModelForm):
 class TimeForm(forms.ModelForm):
     class Meta:
         model = Time
-        fields = ('date', 'hours', 'log')
+        fields = ('date', 'project', 'hours', 'log')
         widgets = {
             'hours': forms.widgets.NumberInput(attrs={
                 'class': 'col-2'
