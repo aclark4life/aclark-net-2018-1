@@ -144,6 +144,14 @@ class InvoiceForm(forms.ModelForm):
             'last_payment_date',
         )
 
+    last_payment_date = forms.DateField(
+        widget=forms.DateInput(attrs={
+            'type': 'date',
+            'class': 'col-2'
+        }),
+        required=False,
+        initial=timezone.now())
+
 
 class NewsletterForm(forms.ModelForm):
     class Meta:
