@@ -160,7 +160,7 @@ def get_form(**kwargs):
             for project in projects:
                 choice = (("%s" % project.id, "%s" % project))
                 choices.append(choice)
-            form = form_model()
+            form = form_model(instance=obj)
             form.fields['project'].widget.choices = choices
         else:
             form = form_model(instance=obj)
