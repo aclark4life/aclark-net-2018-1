@@ -64,7 +64,11 @@ def edit(request, **kwargs):
         obj = get_object_or_404(model, pk=pk)
         if model_name == 'user':  # One-off to edit user profile
             obj = obj.profile
-        form = get_form(form_model=form_model, obj=obj)
+        form = get_form(
+            form_model=form_model,
+            obj=obj,
+            project_model=project_model,
+            request=request)
     if request.method == 'POST':
         ref = request.META.get('HTTP_REFERER')
         if pk is None:
@@ -150,6 +154,14 @@ def get_form(**kwargs):
         model_name = obj._meta.verbose_name
         if model_name == 'note':  # Populate form with tags already set
             form = form_model(initial={'tags': obj.tags.all()}, instance=obj)
+        elif model_name == 'time':  # XXX Dup
+            projects = project_model.objects.filter(team__in=[request.user.pk])
+            choices = [('', '---------')]
+            for project in projects:
+                choice = (("%s" % project.id, "%s" % project))
+                choices.append(choice)
+            form = form_model()
+            form.fields['project'].widget.choices = choices
         else:
             form = form_model(instance=obj)
     else:  # New object
@@ -183,7 +195,7 @@ def get_form(**kwargs):
                 now = timezone.now()
                 obj = model(subject="%s" % now.strftime('%B %Y'))
                 form = form_model(instance=obj)
-            elif model_name == 'time':
+            elif model_name == 'time':  # XXX Dup
                 projects = project_model.objects.filter(
                     team__in=[request.user.pk])
                 choices = [('', '---------')]
