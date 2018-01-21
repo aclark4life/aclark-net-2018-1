@@ -368,6 +368,7 @@ def invoice_edit(request, pk=None):
 def invoice_index(request):
     search_fields = (
         'client__name',
+        'id',
         'issue_date',
         'project__name',
         'subject',
