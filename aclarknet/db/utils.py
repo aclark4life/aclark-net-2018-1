@@ -246,7 +246,6 @@ def get_index_items(**kwargs):
     if model_name == 'note':  # Per model extras
         context['note_info'] = get_note_info(model)
     elif model_name == 'invoice':
-        context['show_invoice_sent'] = 'true'
         context['show_invoice_subject'] = 'true'
         context['show_invoice_user'] = 'false'
     elif model_name == 'time':
@@ -511,7 +510,6 @@ def get_page_items(**kwargs):
                 context['note_info'] = get_note_info(note_model)
                 context['reports'] = reports
                 context['projects'] = projects
-                context['show_invoice_sent'] = 'false'
                 context['show_invoice_subject'] = 'false'
                 context['show_invoice_user'] = 'false'
                 context['times'] = times
