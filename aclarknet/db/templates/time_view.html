@@ -24,9 +24,7 @@
           <table class="table table-no-bordered table-hover"> 
             <thead>
               <tr>
-                {% if is_staff %}
-                <th data-field="invoiced" data-sortable="true">Invoiced</th>
-                {% endif %}
+                {% if is_staff %}<th data-field="invoiced" data-sortable="true">Invoiced</th>{% endif %}
                 <th data-field="date" data-sortable="true">Date</th>
                 <th data-field="project" data-sortable="true">Project</th>
                 <th data-field="hours" data-sortable="true">Hours</th>
@@ -44,7 +42,7 @@
               <tr>
                 {% if is_staff %}<td>{% if item.invoiced %}<i data-toggle="tooltip" data-placement="right" title="Invoice Paid" class="fa fa-check"></i>{% endif %}</td>{% endif %}
                 <td>{{ item.date|date:'Y-m-d'|default:'' }}</td>
-                {% if is_staff %}{% if item.project %}<td><a href="{% url 'project_view' item.project.pk %}">{{ item.project|default:'' }}</a></td>{% else %}<td></td>{% endif %}{% else %}{{ item.project|default:'' }}{% endif %}
+                <td>{{ item.project|default:'' }}</td>
                 <td>{{ item.hours|default:'' }}</td>
                 <td>{{ item.log|default:'' }}</td>
                 {% if is_staff %}
