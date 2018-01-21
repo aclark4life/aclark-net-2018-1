@@ -153,7 +153,6 @@ def get_form(**kwargs):
         else:
             form = form_model(instance=obj)
     else:  # New object
-        initial = {'send_html': True}
         if model:
             model_name = model._meta.verbose_name
             if model_name == 'report' and invoice_model:  # Populate new report
@@ -184,10 +183,19 @@ def get_form(**kwargs):
                 now = timezone.now()
                 obj = model(subject="%s" % now.strftime('%B %Y'))
                 form = form_model(instance=obj)
+            elif model_name == 'time':
+                projects = project_model.objects.filter(
+                    team__in=[request.user.pk])
+                choices = [('', '---------')]
+                for project in projects:
+                    choice = (("%s" % project.id, "%s" % project))
+                    choices.append(choice)
+                form = form_model()
+                form.fields['project'].widget.choices = choices
             else:
-                form = form_model(initial=initial)
+                form = form_model()
         else:
-            form = form_model(initial=initial)
+            form = form_model()
     return form
 
 
