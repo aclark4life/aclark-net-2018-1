@@ -382,8 +382,8 @@ vagrant-update:
 
 # Webpack
 webpack-init:
-	touch entry.js
-	echo "module.exports = { entry: './entry.js', output: { filename: 'bundle.js' } }" > webpack.config.js
+	touch app.js
+	echo "module.exports = { entry: './app.js', output: { filename: 'bundle.js' } }" > webpack.config.js
 webpack:
 	webpack
 pack: webpack  # Alias
@@ -392,41 +392,3 @@ pack: webpack  # Alias
 
 PROJECT=aclarknet
 APP=db
-
-aclarknet-import:
-	scp db:/srv/aclarknet-database/task.json .
-	scp db:/srv/aclarknet-database/time.json .
-	scp db:/srv/aclarknet-database/project.json .
-	scp db:/srv/aclarknet-database/profile.json .
-	scp db:/srv/aclarknet-database/client.json .
-	scp db:/srv/aclarknet-database/contact.json .
-	scp db:/srv/aclarknet-database/note.json .
-	scp db:/srv/aclarknet-database/invoice.json .
-	scp db:/srv/aclarknet-database/estimate.json .
-	scp db:/srv/aclarknet-database/testimonial.json .
-	scp db:/srv/aclarknet-database/service.json .
-	scp db:/srv/aclarknet-database/user.json .
-	sed -i '' 's/database/db/g' task.json
-	sed -i '' 's/database/db/g' time.json
-	sed -i '' 's/database/db/g' project.json
-	sed -i '' 's/database/db/g' profile.json
-	sed -i '' 's/database/db/g' client.json
-	sed -i '' 's/database/db/g' contact.json
-	sed -i '' 's/database/db/g' note.json
-	sed -i '' 's/database/db/g' invoice.json
-	sed -i '' 's/database/db/g' estimate.json
-	sed -i '' 's/database/db/g' testimonial.json
-	sed -i '' 's/database/db/g' service.json
-	sed -i '' 's/database/db/g' user.json
-	scp -i /Users/alexclark/.ssh/AC.pem task.json ec2-user@54.147.23.87:
-	scp -i /Users/alexclark/.ssh/AC.pem time.json ec2-user@54.147.23.87:
-	scp -i /Users/alexclark/.ssh/AC.pem project.json ec2-user@54.147.23.87:
-	scp -i /Users/alexclark/.ssh/AC.pem profile.json ec2-user@54.147.23.87:
-	scp -i /Users/alexclark/.ssh/AC.pem client.json ec2-user@54.147.23.87:
-	scp -i /Users/alexclark/.ssh/AC.pem contact.json ec2-user@54.147.23.87:
-	scp -i /Users/alexclark/.ssh/AC.pem note.json ec2-user@54.147.23.87:
-	scp -i /Users/alexclark/.ssh/AC.pem invoice.json ec2-user@54.147.23.87:
-	scp -i /Users/alexclark/.ssh/AC.pem estimate.json ec2-user@54.147.23.87:
-	scp -i /Users/alexclark/.ssh/AC.pem testimonial.json ec2-user@54.147.23.87:
-	scp -i /Users/alexclark/.ssh/AC.pem service.json ec2-user@54.147.23.87:
-	scp -i /Users/alexclark/.ssh/AC.pem user.json ec2-user@54.147.23.87:
