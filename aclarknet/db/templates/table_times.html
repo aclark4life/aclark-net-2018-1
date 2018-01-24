@@ -1,7 +1,7 @@
           <table data-toggle="table" data-classes="table table-no-bordered table-hover">
             <thead>
               <tr>
-                <th>#</th>
+                <th></th>
                 {% if is_staff %}<th data-field="invoiced" data-sortable="true" data-visible="{{ columns_visible.time.invoiced }}">Invoiced</th>{% endif %}
                 <th data-field="date" data-sort-name="hidden-date" data-sortable="true">Date</th>
                 <th data-field="hidden-date" data-sortable="true" data-visible="false">Hidden Date</th>
@@ -23,7 +23,7 @@
             <tbody>
             {% for item in items.times %}
               <tr>
-                {% forloop.counter %}
+                {{ forloop.counter }}
                 {% if is_staff %}<td>{% if item.invoiced %}<i class="fa fa-check"></i>{% endif %}</td>{% endif %}
                 <td>{{ item.date|date:'Y-m-d'|default:'' }}</td>
                 <td>{{ item.date|date:'U' }}</td>
