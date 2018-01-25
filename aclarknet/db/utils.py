@@ -293,7 +293,6 @@ def get_page_items(**kwargs):
     company_model = kwargs.get('company_model')
     columns_visible = kwargs.get('columns_visible')
     contact_model = kwargs.get('contact_model')
-    contract_model = kwargs.get('contract_model')
     estimate_model = kwargs.get('estimate_model')
     invoice_model = kwargs.get('invoice_model')
     model = kwargs.get('model')
@@ -345,35 +344,23 @@ def get_page_items(**kwargs):
         elif model_name == 'client':
             client = get_object_or_404(model, pk=pk)
             contacts = contact_model.objects.filter(client=client)
-            contracts = contract_model.objects.filter(client=client)
+            invoices = invoice_model.objects.filter(active=True, client=client)
+            notes = client.note.all()
             projects = project_model.objects.filter(active=True, client=client)
             if order_by:
                 projects = projects.order_by(*order_by['project'])
-            context['contacts'] = contacts
-            context['contracts'] = contracts
+            items = set_items('contact', items=contacts)
+            items = set_items('invoice', items=invoices, _items=items)
+            items = set_items('note', items=notes, _items=items)
+            items = set_items('project', items=projects, _items=items)
             context['item'] = client
-            context['notes'] = client.note.all()
-            context['projects'] = projects
+            context['items'] = items
         elif model_name == 'contact':
             contact = get_object_or_404(model, pk=pk)
             context['items'] = get_fields([
                 contact,
             ])  # table_items.html
             context['item'] = contact
-        elif model_name == 'contract':
-            contract = get_object_or_404(model, pk=pk)
-            estimate = contract.statement_of_work
-            times = None
-            if estimate:
-                times = time_model.objects.filter(
-                    client=estimate.client,
-                    estimate=None,
-                    project=None,
-                    invoiced=False,
-                    invoice=None)
-            context['doc_type'] = model_name
-            context['item'] = contract
-            context['times'] = times
         elif model_name == 'estimate':  # handle obj or model
             if not obj:
                 estimate = get_object_or_404(model, pk=pk)

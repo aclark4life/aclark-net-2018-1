@@ -25,102 +25,30 @@
           </div>
 {% include 'copy_form.html' %}
 {% include 'delete_form.html' %}
-          <!-------------------------------------------------------------------------------->
           <div class="row">
             <div class="col-md-12 my-1">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Active</th> 
-                    <th>Address</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><form action="{% url 'client_edit' item.pk %}" method="post">{% csrf_token %}<input type="hidden" value="off" name="checkbox-active"><input type="checkbox" value="on" name="checkbox-active"{% if item.active %} checked {% endif %} onChange="this.form.submit()"></form></td>
-                    <td>{{ item.address|default:'' }}</td>
-                    <td>{{ item.description|default:'' }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <!-------------------------------------------------------------------------------->
-          <div class="row">
-            <div class="col-md-12 my-1">
-              <h2>Projects</h2>
+              <h2 class="my-1">Invoices</h2>
+{% with items=items.invoices %}
+{% include 'table_invoices.html' %}
+{% endwith %}
             </div>
           </div>
           <div class="row">
             <div class="col-md-12 my-1">
-              <table data-toggle="table" data-classes="table table-no-bordered">
-                <thead>
-                  <tr>
-                    <th data-sortable="true">Name</th>
-                    <th data-field="start-date" data-sort-name="hidden-start-date" data-sortable="true">Start</th>
-                    <th data-field="hidden-start-date" data-sortable="true" data-visible="false">Hidden Start Date</th>
-                    <th data-field="end-date" data-sort-name="hidden-end-date" data-sortable="true">Stop</th>
-                    <th data-field="hidden-end-date" data-sortable="true" data-visible="false">Hidden End Date</th>
-                    <th>View</th>
-                    <th>Edit</th>
-                  </tr>
-                </thead>
-                <tbody> 
-                {% for project in projects %}
-                <tr>
-                  <td><a href="{% url 'project_view' project.pk %}">{{ project.name|default:'' }}</a></td>
-                  <td>{{ project.start_date|date:'Y-m-d'|default:'' }}</td>
-                  <td>{{ project.start_date|date:'U' }}</td>
-                  <td>{{ project.end_date|date:'Y-m-d'|default:'' }}</td>
-                  <td>{{ project.end_date|date:'U' }}</td>
-                  <td><a class="text-{{ icon_color }}" href="{% url 'project_view' project.pk %}"><i class="fa fa-external-link fa-{{ icon_size }}" style="vertical-align: middle"></i> View</a></td>
-                  <td><a class="text-{{ icon_color }}" href="{% url 'project_edit' project.pk %}"><i class="fa fa-edit fa-{{ icon_size }}" style="vertical-align: middle"></i> Edit</a></td>
-                </tr>
-                {% endfor %} 
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <!-------------------------------------------------------------------------------->
-          <div class="row">
-            <div class="col-md-12 my-1">
-              <h2>Contacts</h2>
-            </div>
-          </div>
-          <!-------------------------------------------------------------------------------->
-          <div class="row">
-            <div class="col-md-12 my-1">
-              <table data-toggle="table" data-classes="table table-no-bordered">
-                <thead>
-                  <tr>
-                    <th data-sortable="true">First Name</th>
-                    <th data-sortable="true">Last Name</th>
-                    <th>View</th>
-                    <th>Edit</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for contact in contacts %}
-                  <tr>
-                    <td>{{ contact.first_name|default:'' }}</td>
-                    <td>{{ contact.last_name|default:'' }}</td>
-                    <td><a class="text-{{ icon_color }}" href="{% url 'contact_view' contact.pk %}"><i class="fa fa-external-link fa-{{ icon_size }}" style="vertical-align: middle"></i> View</a></td>
-                    <td><a class="text-{{ icon_color }}" href="{% url 'contact_edit' contact.pk %}"><i class="fa fa-edit fa-{{ icon_size }}" style="vertical-align: middle"></i> Edit</a></td>
-                  </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
+              <h2 class="my-1">Projects</h2>
+{% include 'table_projects.html' %}
             </div>
           </div>
           <div class="row">
             <div class="col-md-12 my-1">
               <h2 class="my-1">Notes</h2>
+{% include 'table_notes.html' %}
             </div>
           </div>
           <div class="row">
             <div class="col-md-12 my-1">
-{% include 'notes.html' %}
+              <h2 class="my-1">Contacts</h2>
+{% include 'table_contacts.html' %}
             </div>
           </div>
 {% endblock %}

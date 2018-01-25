@@ -38,24 +38,12 @@
                 <!-- Right column -->
                 <td rowspan=5 valign="top" align="right" class="field-name border-right">For</td>
                 <td rowspan=5 valign="top" class="field-value">
-                  <!-- Name -->
+                  <!-- Client Name -->
                   <strong>
-                  {% if item.client %} {% if not pdf %}
-                    <a href="{% url 'client_view' item.client.pk %}">{{ item.client.name|default:''|linebreaksbr }}</a>
-                    <a href="{% url 'client_edit' item.client.pk %}"><i class="fa fa-cog"></i></a>
-                  {% else %} {{ item.client.name|default:''|linebreaksbr }} {% endif %}
-                  {% elif item.user %} {% if not pdf %}
-                    <a href="{% url 'user_edit' item.user.pk %}"><i class="fa fa-cog"></i></a>
-                    <a href="{% url 'user_view' item.user.pk %}"><i class="fa fa-user"></i></a>
-                  {% else %} {{ item.user.get_full_name|default:''|linebreaksbr }} {% endif %}
-                  {% endif %}
+                  {% if item.client and not pdf %}<a href="{% url 'client_view' item.client.pk %}">{{ item.client.name|default:''|linebreaksbr }}</a> <a href="{% url 'client_edit' item.client.pk %}"><i class="fa fa-cog"></i></a>{% else %} {{ item.client.name|default:''|linebreaksbr }} {% endif %}
                   </strong> <br>
-                  <!-- Address -->
-                  {% if item.client %}
-                  {{ item.client.address|default:''|linebreaksbr }}
-                  {% elif item.user %}
-                  {{ item.user.profile.address|default:''|linebreaksbr }}
-                  {% endif %}
+                  <!-- Client Address -->
+                  {% if item.client %}{{ item.client.address|default:''|linebreaksbr }}{% endif %}
                 </td>
               </tr>
               <tr>

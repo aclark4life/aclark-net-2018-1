@@ -124,6 +124,7 @@ def client_view(request, pk=None):
         app_settings_model=SettingsApp,
         contact_model=Contact,
         contract_model=Contract,
+        invoice_model=Invoice,
         model=Client,
         order_by=order_by,
         pk=pk,
