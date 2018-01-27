@@ -265,9 +265,6 @@ def get_index_items(**kwargs):
         items = []
     if model_name == 'note':  # Per model extras
         context['note_info'] = get_note_info(model)
-    elif model_name == 'invoice':
-        context['show_invoice_subject'] = 'true'
-        context['show_invoice_user'] = 'false'
     elif model_name == 'time':
         context['total_hours'] = get_total_hours(items)['total']
     if paginated:  # Paginate if paginated
@@ -381,7 +378,6 @@ def get_page_items(**kwargs):
             context['entries'] = times
             context['item'] = estimate
             context['total_hours'] = total_hours
-            context['show_export'] = True
         if model_name == 'file':
             file_obj = get_object_or_404(model, pk=pk)
             context['doc_type'] = model_name
@@ -399,7 +395,6 @@ def get_page_items(**kwargs):
             context['invoice'] = True
             context['last_payment_date'] = last_payment_date
             context['total_hours'] = total_hours
-            context['show_export'] = True
         elif model_name == 'newsletter':
             newsletter = get_object_or_404(model, pk=pk)
             context['doc_type'] = model_name
@@ -517,8 +512,6 @@ def get_page_items(**kwargs):
                 context['note_info'] = get_note_info(note_model)
                 context['reports'] = reports
                 context['projects'] = projects
-                context['show_invoice_subject'] = 'false'
-                context['show_invoice_user'] = 'false'
                 context['times'] = times
                 total_hours = get_total_hours(times)['total']
                 total_cost = get_total_cost(projects)
