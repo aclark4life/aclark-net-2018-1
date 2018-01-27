@@ -2,9 +2,7 @@
                 <table data-toggle="table" data-classes="table table-no-bordered table-hover">
                   <thead>
                     <tr>
-                      <th data-align="center" data-toggle="tooltip" data-placement="right" title="Invoice Paid" data-field="invoiced" data-sortable="true" data-visible="true">Sent</th>
-                      <th data-sort-name="hidden-user" data-sortable="true" data-visible="true">User</th>
-                      <th data-field="hidden-user" data-sortable="true" data-visible="false">Hidden User</th>
+                      <th data-align="center" data-toggle="tooltip" data-placement="right" title="Invoice sent" data-field="invoiced" data-sortable="true" data-visible="true">Sent</th>
                       <th data-sort-name="subject" data-sortable="true" data-visible="true">Subject</th>
                       <th data-sort-name="hidden-client" data-sortable="true">Client</th>
                       <th data-field="hidden-client" data-sortable="true" data-visible="false">Hidden Client</th>
@@ -21,9 +19,7 @@
                   <tbody>
                   {% for item in items %}
                     <tr>
-                      <td>{% if item.last_payment_date or item.accepted_date %}<i data-toggle="tooltip" data-placement="right" title="Invoice Paid" class="fa fa-check"></i>{% endif %}</td>
-                      {% if item.user %}<td><a href="{% url 'user_view' item.user.pk %}">{{ item.user.get_full_name|default:'' }}</a></td>{% else %}<td></td> {% endif %}
-                      <td>{{ item.user }}</td>
+                      <td>{% if item.last_payment_date or item.accepted_date %}<i data-toggle="tooltip" data-placement="right" title="Invoice sent" class="fa fa-check"></i>{% endif %}</td>
                       <td>{{ item.subject|default:'' }}</td>
                       {% if item.client %}<td><a href="{% url 'client_view' item.client.pk %}">{{ item.client.name|default:'' }}</a></td>{% else %}<td></td> {% endif %}
                       <td>{{ item.client }}</td>
