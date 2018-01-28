@@ -14,6 +14,7 @@
           <table data-toggle="table" data-classes="table table-no-bordered table-hover">
             <thead>
               <tr>
+                <th data-field="counter" data-sortable="true">#</th>
                 <th data-sort-name="hidden-active" data-sortable="true" {% if active %} data-visible="false" {% endif %}>Active</th>
                 <th data-field="hidden-active" data-sortable="true" data-visible="false">Hidden Active</th>
                 <th data-sort-name="hidden-name" data-sortable="true">Name</th>
@@ -26,6 +27,7 @@
             <tbody>
             {% for item in items.clients %}
               <tr>
+                <td>{{ forloop.counter }}</td>
                 <td><form action="{% url 'client_edit' item.pk %}" method="post">{% csrf_token %}<input type="hidden" value="off" name="checkbox-active"><input type="checkbox" value="on" name="checkbox-active"{% if item.active %} checked {% endif %} onChange="this.form.submit()"></form></td>
                 <td>{{ item.active }}</td>
                 <td>{{ item.name|default:'' }}</td>
