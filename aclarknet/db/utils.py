@@ -242,7 +242,7 @@ def get_index_items(**kwargs):
     search = get_query_string(request, 'search')
     if request:
         context['is_staff'] = request.user.is_staff
-    # Search is easy, return search results
+    # Return search index items
     if request.method == 'POST':
         if search == u'':  # Empty search returns none
             return context
@@ -257,8 +257,11 @@ def get_index_items(**kwargs):
                 view_url=view_url,
                 order_by=order_by,
                 request=request)
-    # Not a search, return index items
-    items = model.objects.filter(**filter_by)
+    # Return filtered or all index items
+    if filter_by:
+        items = model.objects.filter(**filter_by)
+    else:
+        items = model.objects.all()
     if order_by is not None:  # Order items
         # http://stackoverflow.com/a/20257999/185820
         items = items.order_by(*order_by)
