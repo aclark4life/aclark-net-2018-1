@@ -96,10 +96,10 @@ def obj_redir(obj, pk=None):
 
 def obj_remove(obj):
     model_name = obj._meta.verbose_name
-    if model_name == 'time':
+    if model_name == 'time':  # Only admin can see index
         url_name = get_template_and_url(
-            model_name=model_name, page_type='home')  # Redir to home
-    else:
+            model_name=model_name, page_type='dashboard')  # Redir to dash
+    else:  # Admin can see index
         url_name = get_template_and_url(
             model_name=model_name, page_type='index')  # Redir to index
     if model_name == 'profile':
