@@ -41,8 +41,8 @@ def get_template_and_url(**kwargs):
     elif page_type == 'edit':
         template_name = '%s.html' % URL_NAMES[model_name][1]
         return template_name
-    elif page_type == 'home':
-        url_name = 'home'
+    elif page_type == 'dashboard':
+        url_name = 'dashboard'
         return url_name
     elif page_type == 'index':
         url_name = URL_NAMES[model_name][2]
