@@ -117,6 +117,21 @@ class EstimateForm(forms.ModelForm):
     #     widget=forms.SelectMultiple(attrs={
     #         'size': '5'
     #     }))
+    issue_date = forms.DateField(
+        widget=forms.DateInput(attrs={
+            'type': 'date',
+            'class': 'col-2'
+        }),
+        required=False,
+        initial=timezone.now())
+
+    accepted_date = forms.DateField(
+        widget=forms.DateInput(attrs={
+            'type': 'date',
+            'class': 'col-2'
+        }),
+        required=False,
+        initial=timezone.now())
 
 
 class FileForm(forms.ModelForm):
