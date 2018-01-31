@@ -745,6 +745,9 @@ def time_index(request):
                 'log': 'false',
             },
         },
+        filter_by={
+            'estimate': None,
+        },
         order_by=(
             'invoiced',
             '-updated',

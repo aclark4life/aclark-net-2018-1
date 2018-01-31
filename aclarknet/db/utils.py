@@ -219,6 +219,7 @@ def get_index_items(**kwargs):
     columns_visible = kwargs.get('columns_visible')
     company_model = kwargs.get('company_model')
     model = kwargs.get('model')
+    filter_by = kwargs.get('filter_by')
     order_by = kwargs.get('order_by')
     page_size = kwargs.get('page_size')
     request = kwargs.get('request')
@@ -241,7 +242,7 @@ def get_index_items(**kwargs):
     search = get_query_string(request, 'search')
     if request:
         context['is_staff'] = request.user.is_staff
-    # Search is easy
+    # Search is easy, return search results
     if request.method == 'POST':
         if search == u'':  # Empty search returns none
             return context
@@ -256,8 +257,8 @@ def get_index_items(**kwargs):
                 view_url=view_url,
                 order_by=order_by,
                 request=request)
-    # Not a search
-    items = model.objects.all()
+    # Not a search, return index items
+    items = model.objects.filter(**filter_by)
     if order_by is not None:  # Order items
         # http://stackoverflow.com/a/20257999/185820
         items = items.order_by(*order_by)
