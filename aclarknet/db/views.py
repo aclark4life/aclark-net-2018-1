@@ -747,7 +747,7 @@ def time_index(request):
         },
         filter_by={
             'estimate': None,
-            # 'invoice__isnull': False,
+            'user__isnull': False,
         },
         order_by=(
             'invoiced',
