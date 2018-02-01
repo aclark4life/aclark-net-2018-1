@@ -303,6 +303,10 @@ class Invoice(BaseModel):
         else:
             return 'invoice-%s' % self.pk
 
+    # https://stackoverflow.com/a/6062320/185820
+    class Meta:
+        ordering = ["subject"]
+
 
 # https://docs.djangoproject.com/en/1.11/ref/contrib/gis/tutorial/#defining-a-geographic-model
 class Location(BaseModel):
