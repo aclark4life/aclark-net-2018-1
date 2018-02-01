@@ -11,13 +11,16 @@ from uuid import uuid4
 
 # https://github.com/goinnn/django-multiselectfield
 COLOR_CHOICES = (
-    ('danger', 'Danger'),
-    ('faded', 'Faded'),
-    ('info', 'Info'),
-    ('inverse', 'Inverse'),
     ('primary', 'Primary'),
+    ('secondary', 'Secondary'),
     ('success', 'Success'),
+    ('danger', 'Danger'),
     ('warning', 'Warning'),
+    ('info', 'Info'),
+    ('light', 'Light'),
+    ('dark', 'Dark'),
+    ('muted', 'Muted'),
+    ('white', 'White'),
 )
 
 DASHBOARD_ITEMS = (
