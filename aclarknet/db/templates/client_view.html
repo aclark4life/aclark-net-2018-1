@@ -27,6 +27,12 @@
 {% include 'delete_form.html' %}
           <div class="row">
             <div class="col-md-12 my-1">
+              <h2 class="my-1">Address</h2>
+              <address>{{ item.address }}</address>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 my-1">
               <h2 class="my-1">Invoices</h2>
 {% with items=items.invoices view_url='invoice_view' edit_url='invoice_edit' %}
 {% include 'table_invoices.html' %}
