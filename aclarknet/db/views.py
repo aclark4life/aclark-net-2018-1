@@ -513,6 +513,11 @@ def project_view(request, pk=None):
         estimate_model=Estimate,
         invoice_model=Invoice,
         user_model=User,
+        columns_visible={
+            'invoices': {
+                'sent': 'true',
+            },
+        },
         order_by={'time': ('date', )},  # For time entries
         time_model=Time,
         pk=pk,
