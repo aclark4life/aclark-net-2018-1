@@ -299,6 +299,11 @@ class Invoice(BaseModel):
         null=True)
     currency_symbol = models.CharField(
         default="$", max_length=300, blank=True, null=True)
+    note = models.ManyToManyField(
+        'Note',
+        blank=True,
+        limit_choices_to={'active': True},
+    )
 
     def __str__(self):
         if self.subject:
