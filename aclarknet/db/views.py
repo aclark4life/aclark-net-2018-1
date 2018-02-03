@@ -387,7 +387,10 @@ def invoice_index(request):
                 'sent': 'true',
             },
         },
-        order_by=('-issue_date', ),
+        order_by=(
+            '-last_payment_date',
+            '-issue_date',
+        ),
         request=request,
         search_fields=search_fields)
     return render(request, 'invoice_index.html', context)
