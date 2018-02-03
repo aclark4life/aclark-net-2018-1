@@ -464,7 +464,11 @@ def note_view(request, pk=None):
         context = get_page_items(
             app_settings_model=SettingsApp, model=Note, pk=pk, request=request)
         if context['pdf']:
-            filename = 'note-%s' % pk
+            title = context['item'].title
+            if title:
+                filename = '%s.pdf' % title
+            else:
+                filename = 'note-%s.pdf' % pk
             return render_pdf(
                 context, filename=filename, template='table_note.html')
         return render(request, 'note_view.html', context)
