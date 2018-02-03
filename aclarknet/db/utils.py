@@ -307,6 +307,7 @@ def get_page_items(**kwargs):
     pk = kwargs.get('pk')
     time_model = kwargs.get('time_model')
     user_model = kwargs.get('user_model')
+    filter_by = kwargs.get('filter_by')
     context = {}
     items = None
     if company_model:
@@ -492,8 +493,10 @@ def get_page_items(**kwargs):
                 projects = project_model.objects.filter(
                     active=True, hidden=False)
                 projects = projects.order_by(*order_by['project'])
-                times = time_model.objects.filter(
-                    invoiced=False, user=request.user)
+                if filter_by:
+                    times = model.objects.filter(**filter_by)
+                else:
+                    times = model.objects.all()
                 times = times.order_by(*order_by['time'])
                 times = set_total_amount(times)
                 items = set_items('estimate', items=estimates)

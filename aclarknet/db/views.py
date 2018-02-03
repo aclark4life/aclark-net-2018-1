@@ -315,6 +315,8 @@ def home(request):
         },
         filter_by={
             'estimate': None,
+            'invoiced': False,
+            'user': request.user,
         },
         estimate_model=Estimate,
         invoice_model=Invoice,
