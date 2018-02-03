@@ -309,8 +309,8 @@ def home(request):
                 'hidden': 'false',
                 'note': 'false',
             },
-            'invoice': {
-                'paid': 'false',
+            'invoices': {
+                'sent': 'false',
             },
         },
         filter_by={
