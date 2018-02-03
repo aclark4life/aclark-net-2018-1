@@ -45,7 +45,8 @@ def set_total_amount(times, estimate=None, invoice=None, project=None):
         hours = time_entry.hours
         if time_entry.task:
             rate = time_entry.task.rate
-            time_entry_amount = rate * hours
+            if rate:
+                time_entry_amount = rate * hours
         time_entry.amount = '%.2f' % time_entry_amount
         invoice_amount += time_entry_amount
     if invoice:
