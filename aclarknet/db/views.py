@@ -322,7 +322,7 @@ def home(request):
             'note': ('-active', '-updated', 'tags'),
             'project': ('-updated', ),
             'report': ('date', ),
-            'time': ('-updated', ),
+            'time': ('-date', ),
         },
         project_model=Project,
         time_model=Time,
