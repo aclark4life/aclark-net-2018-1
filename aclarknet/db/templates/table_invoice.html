@@ -97,5 +97,20 @@
                     <h1>{{ company_currency_symbol }}{{ item.amount }}</h1>
                   </td>
                 </tr>
+                {% if item.note.all %}
+                <tr>
+                  <td colspan=5> 
+                    <h2>Notes</h2>
+                  </td>
+                </tr>
+                {% for note in item.note.all %}
+                <tr>
+                  <td colspan=5> 
+                    <h3>{{ note.title|default:'' }}</h3>
+                    {{ note.note|safe }}
+                  </td>
+                </tr>
+                {% endfor %}
+                {% endif %}
               </tbody>
             </table>
