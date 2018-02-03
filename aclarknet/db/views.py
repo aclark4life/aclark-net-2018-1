@@ -233,12 +233,9 @@ def estimate_view(request, pk=None):
         request=request)
     if context['pdf']:
         company_name = get_company_name(SettingsCompany)
+        filename = '%s_%s_%s.pdf' % (company_name, 'invoice'.upper(), pk)
         return render_pdf(
-            request,
-            'invoice_pdf.html',
-            context,
-            pk=pk,
-            company_name=company_name)
+            context, filename=filename, template='table_invoice.html')
     else:
         return render(request, 'estimate_view.html', context)
 
@@ -348,12 +345,9 @@ def invoice_view(request, pk=None):
         time_model=Time)
     if context['pdf']:
         company_name = get_company_name(SettingsCompany)
+        filename = '%s_%s_%s.pdf' % (company_name, 'invoice'.upper(), pk)
         return render_pdf(
-            request,
-            'invoice_pdf.html',
-            context,
-            pk=pk,
-            company_name=company_name)
+            context, filename=filename, template='table_invoice.html')
     else:
         return render(request, 'invoice_view.html', context)
 
@@ -469,6 +463,9 @@ def note_view(request, pk=None):
     else:
         context = get_page_items(
             app_settings_model=SettingsApp, model=Note, pk=pk, request=request)
+        if context['pdf']:
+            filename = 'note-%s' % pk
+            return render_pdf(context, template='table_note.html')
         return render(request, 'note_view.html', context)
 
 
