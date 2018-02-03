@@ -653,6 +653,7 @@ def set_relationship(obj, request, **kwargs):
     elif model_name == 'note':
         query_client = get_query_string(request, 'client')
         query_company = get_query_string(request, 'company')
+        query_invoice = get_query_string(request, 'invoice')
         if query_client:
             client = get_object_or_404(client_model, pk=query_client)
             client.note.add(obj)
@@ -661,6 +662,10 @@ def set_relationship(obj, request, **kwargs):
             company = company_model.get_solo()
             company.note.add(obj)
             company.save()
+        elif query_invoice:
+            invoice = get_object_or_404(invoice_model, pk=query_invoice)
+            invoice.note.add(obj)
+            invoice.save()
     elif model_name == 'project':
         query_client = get_query_string(request, 'client')
         if query_client:

@@ -157,6 +157,7 @@ class InvoiceForm(forms.ModelForm):
             'project',
             'issue_date',
             'last_payment_date',
+            'note',
         )
 
     issue_date = forms.DateField(

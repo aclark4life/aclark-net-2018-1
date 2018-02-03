@@ -483,6 +483,7 @@ def note_edit(request, pk=None):
         app_settings_model=SettingsApp,
         client_model=Client,
         company_model=SettingsCompany,
+        invoice_model=Invoice,
         pk=pk)
 
 
