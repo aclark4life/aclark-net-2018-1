@@ -313,6 +313,9 @@ def home(request):
                 'paid': 'false',
             },
         },
+        filter_by={
+            'estimate': None,
+        },
         estimate_model=Estimate,
         invoice_model=Invoice,
         note_model=Note,
