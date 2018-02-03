@@ -494,9 +494,9 @@ def get_page_items(**kwargs):
                     active=True, hidden=False)
                 projects = projects.order_by(*order_by['project'])
                 if filter_by:
-                    times = model.objects.filter(**filter_by)
+                    times = time_model.objects.filter(**filter_by)
                 else:
-                    times = model.objects.all()
+                    times = time_model.objects.all()
                 times = times.order_by(*order_by['time'])
                 times = set_total_amount(times)
                 items = set_items('estimate', items=estimates)
