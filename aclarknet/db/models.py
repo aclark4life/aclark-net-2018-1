@@ -263,11 +263,6 @@ class Invoice(BaseModel):
     last_payment_date = models.DateField(blank=True, null=True)
     po_number = models.CharField(
         "PO Number", max_length=300, blank=True, null=True)
-    sa_number = models.CharField(
-        "Subcontractor Agreement Number",
-        max_length=300,
-        blank=True,
-        null=True)
     client = models.ForeignKey(
         Client,
         blank=True,
