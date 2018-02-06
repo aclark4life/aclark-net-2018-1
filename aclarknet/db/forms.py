@@ -153,6 +153,7 @@ class InvoiceForm(forms.ModelForm):
             'hidden',
             'subject',
             'po_number',
+            'sa_number',
             'client',
             'project',
             'issue_date',
