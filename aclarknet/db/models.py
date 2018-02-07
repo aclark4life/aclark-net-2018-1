@@ -261,6 +261,10 @@ class Invoice(BaseModel):
     issue_date = models.DateField(
         "Issue Date", blank=True, default=timezone.now, null=True)
     last_payment_date = models.DateField(blank=True, null=True)
+    start_date = models.DateField(
+        "Start Date", blank=True, default=timezone.now, null=True)
+    end_date = models.DateField(
+        "End Date", blank=True, default=timezone.now, null=True)
     po_number = models.CharField(
         "PO Number", max_length=300, blank=True, null=True)
     sa_number = models.CharField(
