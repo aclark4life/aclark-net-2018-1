@@ -154,6 +154,8 @@ class InvoiceForm(forms.ModelForm):
             'subject',
             'po_number',
             'sa_number',
+            'start_date',
+            'end_date',
             'client',
             'project',
             'issue_date',
