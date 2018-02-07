@@ -260,6 +260,7 @@ class Invoice(BaseModel):
     subject = models.CharField(max_length=300, blank=True, null=True)
     issue_date = models.DateField(
         "Issue Date", blank=True, default=timezone.now, null=True)
+    due_date = models.DateField("Due", blank=True, null=True)
     last_payment_date = models.DateField(blank=True, null=True)
     start_date = models.DateField(
         "Start Date", blank=True, default=timezone.now, null=True)

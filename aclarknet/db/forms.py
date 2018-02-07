@@ -159,6 +159,7 @@ class InvoiceForm(forms.ModelForm):
             'client',
             'project',
             'issue_date',
+            'due_date',
             'last_payment_date',
             'note',
         )
