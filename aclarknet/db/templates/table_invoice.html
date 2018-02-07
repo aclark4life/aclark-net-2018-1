@@ -54,7 +54,7 @@
               <tr>
                 <!-- Left column -->
                 <td valign="top" align="left" style="width: 16%" class="field-name border-right">{% if invoice %}Due Date{% endif %}</td>
-                <td valign="top" align="left" style="width: 50%" class="field-value">{% if invoice %}{{ item.due_date|date:'Y-m-d' }} (upon receipt){% endif %}</td>
+                <td valign="top" align="left" style="width: 50%" class="field-value">{% if invoice %}{{ item.due_date|date:'Y-m-d' }}{% endif %}</td>
               </tr>
               <tr>
                 <!-- Left column -->
