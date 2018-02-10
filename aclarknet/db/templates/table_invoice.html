@@ -111,7 +111,6 @@
                 {% for note in item.note.all %}
                 <tr>
                   <td colspan=5> 
-                    <h3>{{ note.title|default:'' }}</h3>
                     {{ note.note|safe }}
                   </td>
                 </tr>
