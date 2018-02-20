@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/aclarknet/aclarknet/issues"
   },
-  "homepage": "https://github.com/aclarknet/aclarknet#readme"
+  "homepage": "https://github.com/aclarknet/aclarknet#readme",
+  "dependencies": {
+    "thelounge": "^2.7.1"
+  }
 }
