@@ -392,9 +392,3 @@ pack: webpack  # Alias
 
 PROJECT=aclarknet
 APP=db
-
-eb-create:
-	echo vpc-9dc18be5
-	echo subnet-7e1dae23, subnet-2333d62c, subnet-3eb92b01, subnet-bb3a8494, subnet-50c6831b, subnet-45a3e621
-	echo sg-0b545a7e
-	eb create -i 't2.micro' -k AC.pem --vpc aclarknet-pro
