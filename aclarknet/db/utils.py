@@ -351,6 +351,7 @@ def get_page_items(**kwargs):
             notes = client.note.all()
             projects = project_model.objects.filter(active=True, client=client)
             if order_by:
+                invoices = invoices.order_by(*order_by['invoice'])
                 projects = projects.order_by(*order_by['project'])
             items = set_items('contact', items=contacts)
             items = set_items('invoice', items=invoices, _items=items)
