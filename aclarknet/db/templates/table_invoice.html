@@ -61,13 +61,11 @@
                 <td valign="top" align="left" style="width: 16%" class="field-name border-bottom border-right">Subject</td>
                 <td valign="top" align="left" style="width: 50%" class="field-value border-bottom">{{ item.subject|default:'' }} {% if item.project %}<a href="{% url 'project_view' item.project.pk %}"><i class="fa fa-arrow-circle-right"></a>{% endif %}</td>
               </tr>
-              {% if item.start_date and item.end_date %}
               <tr>
                 <!-- Left column -->
                 <td valign="middle" align="left" style="width: 16%" class="field-name border-bottom border-right"><strong>{% if item.start_date and item.end_date %}Period of Performance{% endif %}<strong></td>
                 <td valign="middle" align="left" style="width: 50%" class="field-value border-bottom"><strong>{% if item.start_date and item.end_date %}{{ item.start_date }}&mdash;{{ item.end_date }}{% endif %}<strong></td>
               </tr>
-              {% endif %}
               {% if item.sa_number %}
               <tr>
                 <!-- Left column -->
