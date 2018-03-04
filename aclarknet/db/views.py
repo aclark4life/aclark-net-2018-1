@@ -359,6 +359,7 @@ def invoice_edit(request, pk=None):
         request,
         form_model=InvoiceForm,
         model=Invoice,
+        client_model=Client,
         company_model=SettingsCompany,
         project_model=Project,
         pk=pk,

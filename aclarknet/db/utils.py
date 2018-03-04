@@ -193,8 +193,9 @@ def get_form(**kwargs):
                     obj = model(project=project)
                 form = form_model(instance=obj)
             elif model_name == 'invoice':
+                client = get_object_or_404(client_model, pk=query_client)
                 now = timezone.now()
-                obj = model(subject="%s" % now.strftime('%B %Y'))
+                obj = model(subject="%s %s" % (client, now.strftime('%B %Y')))
                 form = form_model(instance=obj)
             elif model_name == 'time':  # XXX Dup
                 projects = project_model.objects.filter(
