@@ -1,9 +1,9 @@
 -e git+https://github.com/aclarknet/django-xhtml2pdf.git@ca6fae09f70856d701124583cacb9e5a83e7ac26#egg=django_xhtml2pdf
 -e git+https://github.com/alex/django-taggit.git@95776ac66948ed7ba7c12e35c1170551e3be66a5#egg=django_taggit
 Babel==2.5.1
-Django==2.0.3
+Django==2.0.4
 Faker==0.8.8
-Pillow==5.0.0
+Pillow==5.1.0
 PyJWT==1.5.3
 PyPDF2==1.26.0
 PyYAML==3.12
