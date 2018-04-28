@@ -68,7 +68,7 @@ class AdminTimeForm(forms.ModelForm):
             'type': 'date',
             'class': 'col-2'
         }),
-        required=False,
+        required=True,
         # initial=timezone.now()
     )
 
@@ -438,6 +438,6 @@ class TimeForm(forms.ModelForm):
             'type': 'date',
             'class': 'col-2'
         }),
-        required=False,
+        required=True,
         # initial=timezone.now()
     )
