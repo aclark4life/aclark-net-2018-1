@@ -23,7 +23,11 @@
 
   <div class="container py-4 fixed-top app-navbar">
   <nav class="navbar navbar-transparent navbar-padded navbar-expand-md">
-{% include 'logo.html' %}
+
+    <a class="navbar-brand mr-auto" href="{% url 'dashboard' %}">
+      <img src="{% static 'aclarknet-logo.png' %}">
+    </a>
+
     <button
       class="navbar-toggler"
       type="button"
