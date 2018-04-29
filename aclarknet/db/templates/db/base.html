@@ -46,7 +46,7 @@
 
 </div>
 
-<div class="bg-white text-dark p-3">
+{% if not request.user.is_anonymous %} <div class="bg-white text-dark p-3"> {% endif %}
 
 {% block content %}
   <div class="block-xs-middle pb-5">
@@ -64,7 +64,7 @@
 {% endblock %}
 </div>
 
-</div>
+{% if not request.user.is_anonymous %}</div> {% endif %}
 
 {% include 'footer.html' %}
 
