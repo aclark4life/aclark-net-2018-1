@@ -1,3 +1,4 @@
+{% load humanize %}
             <!-- Used by invoice and estimate -->
             <!-- Include styles here for pdf conversion -->
             <style>
@@ -113,7 +114,7 @@
                     <h1>Total</h1>
                   </td>
                   <td>
-                    <h1>{{ company_currency_symbol }}{{ item.amount }}</h1>
+                    <h1>{{ company_currency_symbol }}{{ item.amount|intcomma }}</h1>
                   </td>
                 </tr>
                 {% if item.note.all %}
