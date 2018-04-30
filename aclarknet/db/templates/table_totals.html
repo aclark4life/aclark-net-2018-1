@@ -6,9 +6,9 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>{{ company_currency_symbol }}{{ cost|default:'0.00' }}</td>
-                      <td>{{ company_currency_symbol }}{{ gross|default:'0.00' }}</td>
-                      <td>{{ company_currency_symbol }}{{ net|default:'0.00' }}</td>
+                      <td><strong class="text-danger">{{ company_currency_symbol }}{{ cost|default:'0.00' }}</strong></td>
+                      <td><strong class="text-info">{{ company_currency_symbol }}{{ gross|default:'0.00' }}</strong></td>
+                      <td><strong class="text-success">{{ company_currency_symbol }}{{ net|default:'0.00' }}</strong></td>
                     </tr>
                   </tbody>
                 </table>
